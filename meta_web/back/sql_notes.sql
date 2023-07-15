@@ -8,6 +8,7 @@
     -- 3) alter table
     ALTER TABLE table_name ADD (column_name datatype(size));
     ALTER TABLE table_name ADD PRIMARY KEY (column_name);
+    ALTER TABLE table1_name ADD FOREIGN KEY (column1_name) REFERENCES table_name (column_name);
     ALTER TABLE table_name MODIFY (column_name datatype(size));
     ALTER TABLE table_name DROP COLUMN (column_name);
     -- 4) turncate but not delete
@@ -95,19 +96,26 @@
         -- Binary Large Object for storing a collection of binary data such as images.
 
 
--- keys = attributes
+-- keys=attrs
 --------------------
+    CREATE TABLE tbl_name(col_name datatype NOT NULL, PRIMARY KEY(col_name));
+    CREATE TABLE tbl_name(col_name datatype, CONSTRAINT PK_cn PRIMARY KEY(col_name));
+    CREATE TABLE tbl1_name(col1_name datatype, FOREIGN KEY(col1_name) REFERENCES tbl_name(col_name));
     -- Candidate key
       -- Candidate keys = Primary Keys + Alternate Keys
       -- any attribute that contains a unique value in each row of the table
     -- Composite key
       -- a key that is composed of two or more attributes to form a unique value in each row
+        -- so it can used as primary if unique
     -- Alternate Key = Secondary Key
       -- a candidate key that was not selected to be the primary key
-    -- Primary Key & Foreign Key
+    -- Primary Key (PK) & Foreign Key (FK)
       -- The foreign key is an attribute on the table that references a unique key in another table
       -- the primary key can comprise more than one column or field.
-        -- This happens when a single column cannot make a record in a table uniquely identifiable.
+        -- This happens when a single column cannot make a rec in a table uniquely identifiable.
+    -- PRI (primary) means it’s a primary key
+    -- UNI (unique) means it’s a unique key
+    -- MUL (multiple) means the related col is permitted to contain the same val in multiple cells of that col 
 
 
 -- constraints
@@ -176,6 +184,96 @@
       -- can also be used with SQL aggregate funcs like COUNT, AVG, MAX
 
 
+-- Schema
+---------
+    -- Before dev a db, you plan how you will organize data. It's essentially a blueprint of what your data looks like
+    -- an organization or grouping of information and the relationships among them
+    -- is just the skeleton of the db, and it doesn’t store any actual data
+    -- it's possible to trans ownership of schemas and their objs btw users and other schemas
+
+    -- consists of:
+      -- all the important data pertaining to a given scenario and their relationships
+      -- unique keys for all entries and db objs
+      -- a name and data type for each col in a table
+
+    -- adv:
+      -- provide logical groupings for database objs
+      -- Maintain a clean set of data in the db related to an application
+      -- make it easier to access and manipulate these db objs than other available methods
+      -- Write efficient queries to retrieve data for reporting purposes, analytics and so on
+      -- provide greater db security
+        -- Avoid reverse-engineering of the underlying data model from time to time
+        -- You can grant perms to sep and protect db objs based on user access rights
+
+    -- schema is defined in different ways across different db systems:
+      -- In the context of a MySQL db
+        -- schema and db are interchangeable terms
+        -- schema means a collection of data structs or an abstract design of how data is stored in a db
+      -- In a SQL server
+        -- schema is comprised of schema objs:
+          -- collection of diff comps like tables, fields, relationships, datatypes, and keys
+      -- In Postgres SQL
+        -- schema is a namespace with the name db objects like views, indexes, and funcs
+      -- In oracle
+        -- schema system assigns a single schema to each user. Oracle even names each schema after its respective user
+
+    -- schema can be broadly divided into three categories (three-schema arch):
+      -- External | view schema
+        -- defines different user views (the part of the db the specific user is interested in)
+        -- hides the nonrelevant details of the db from a user
+      -- Conceptual | logical schema
+        -- db struct is described only at a concept level
+        -- defines entities, attributes and relationships
+        -- ERD is drawn to represent the logical schema of a db
+        -- details about the physical storage and retrieval of data are hidden
+      -- Internal | physical schema
+        -- represents the entire db but at a very low level
+        -- describes how the data is stored on disk in the form of tables, columns and recs.
+        -- defines what data is stored in the db and how.
+
+
+-- relationships
+----------------
+    -- deg of a relation: num of cols(attrs) in a table
+    -- deg of cardinality: num of recs(rows) there are within a particular table in a db
+    -- There are three types of relationships btw any two tables in a relational db:
+        -- one-to-one (1:1)
+          -- one single rec of one table is associated with one single rec of another table
+
+        -- one-to-many (1:N)
+          -- a rec of data in a row of one table is linked to multiple recs in different rows of another
+
+        -- many-to-many (M:N)
+          -- associates one rec of one table with multiple recs of another table.
+          -- The same relationship also works in the other direction
+          -- They are not kept in a data model:
+            -- They are broken down into two 1:N relationships by introducing a junction or middle table
+
+
+-- normalization
+----------------
+    -- The normalization process aims to (tackle): 
+      -- minimize data duplications
+      -- avoid errors during data modifications
+      -- simplify data queries from the db
+    -- The three fund normalization forms are known as:
+      -- First Normal Form (1NF)
+        -- enforce the data atomicity rule (one single instance val of the col attr in any cell of the table)
+        -- eliminate unnecessary repeating groups of data
+        -- Assign a primary key to the table
+      -- Second Normal Form (2NF)
+        -- avoid any partial dep (tables with a composite PK) relationships btw data
+          -- where a non-key attr val dep only on one part of the composite key
+        -- connect table with other tables in the db using FK
+      -- Third Normal Form (3NF)
+        -- it must already be in 2NF + have no transitive dep
+          -- any non-key attr in the table may not be func dep on another non-key attr in the same table
+        -- good enough to deal with the three anomaly challenges:
+          -- INSERT ANOMALY
+          -- UPDATE ANOMALY
+          -- DELETE ANOMALY
+
+
 -- Notes
 --------
 -- db_name must be unique and has max of 63 chars
@@ -185,17 +283,20 @@
 
 -- terms
 --------
-    -- db (relational_SQL, NoSQL, OODBs, schema, ERD, DBMS)
-    -- SQL (low-level+high-level(DDL-DML-DQL-DCL-TCL))
-    -- table=entities (col=field, row=record, cell, attr, datatypes-values-domain)
-    -- key=attr (candidate=unique=primary+(alternate=secondary), composite, foreign=ref, relations(121-12many-many2many))
+    -- db (relational_SQL, NoSQL, OODBs, DBMS)
+    -- SQL (low_level+high_level(DDL-DML-DQL-DCL-TCL))
+    -- table=entities (col, field, row, rec, tuple, cell, attr, datatypes, values, domain)
+    -- key=attr (candidate=unique=primary+(alternate=secondary), composite, foreign=ref)
     -- CRUD (create(INSERT) - read=retrieve(SELECT) - UPDATE - DELETE)
     -- sorting (ascending, descending)
-    -- user (privileges, permissions)
+    -- security, user, privileges, permissions, grant
     -- datatypes (miscellaneous, CLOB, BLOB, binary, encoding)
     -- constraints=rules, Integrity
     -- keywords, clause
     -- conds, arithmetic & logic+Comparison, operation, operator, operand, modulus
+    -- schema, objs, organization, relationships, ERD, ER model, blueprint
+    -- relationships(1:1, 1:N, M:N), parent, child
+    -- normalization(1NF, 2NF, 3NF), dep(partial, func, transitive), atomicity, redundancy, inconsistency, anomaly
     -- 
 
 
@@ -241,3 +342,4 @@
     
     UPDATE tbl_name SET col1_name = val1, col2_name = val2 WHERE col3_name LIKE "Val%";
     DELETE * FROM tbl_name WHERE col_name BETWEEN val1 AND val2;
+
