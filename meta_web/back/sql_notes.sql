@@ -1,3 +1,11 @@
+-- content
+----------
+  -- SQL syntax, basic structure of DBs & different types of keys
+  -- SQL datatypes, explore CRUD & create DBs and tables and manipulate with data
+  -- SQL operators, sort and filter data using clauses
+  -- DB schema, relational DB design(ERD) & DB normalization
+
+
 -- NoSQL ?
 
 -- DDL (define)
@@ -341,5 +349,5 @@
     SELECT col1_name FROM tbl_name ORDER BY col2_name ASC, col3_name DESC;
     
     UPDATE tbl_name SET col1_name = val1, col2_name = val2 WHERE col3_name LIKE "Val%";
-    DELETE * FROM tbl_name WHERE col_name BETWEEN val1 AND val2;
+    DELETE FROM tbl_name WHERE col_name BETWEEN val1 AND val2;
 
