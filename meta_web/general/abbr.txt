@@ -1,0 +1,7 @@
+HTTP -> Hypertext Transfer Protocol
+HTML -> Hypertext Markup languege
+CSS --> Cascading Style Sheet
+JS ---> JavaScript Programing Language
+DOM --> Document Object Model
+WAI --> Web Accessibility Initiative
+ARIA -> Accessible Rich Internet Application
