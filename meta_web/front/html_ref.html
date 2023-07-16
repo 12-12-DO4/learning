@@ -12,6 +12,8 @@
 <emptyelement />
 
 
+
+
 <!-- basic standard struct -->
 <!DOCTYPE html>
 <html>
@@ -25,6 +27,8 @@
 </html>
 
 
+
+
 <!-- headings from largest to smallest -->
 <h1>heading 1</h1>
 <h2>heading 2</h2>
@@ -34,13 +38,221 @@
 <h6>heading 6</h6>
 
 
+
+
 <!-- texts -->
 <p>This is a paragraph element</p>
-<br /> <!-- for breaking line -->
+<!-- paragraph element contains text -->
+
+<p>
+  This is 
+  a paragraph 
+  element, too
+</p>
+<!-- still displayed in one line ignoring line breaks -->
+
+<br />
+<!-- for line breaks -->
+
+<p>
+  This is<br>
+  a paragraph<br>
+  element, too<br>
+</p>
+<!-- now it's multi-line -->
+
+This is a<strong>bold</strong>word  <!-- indicate that a range of text has importance -->
+<br>This is a <b>bold</b>word too    <!-- draw the reader's attention to a range of text -->
+
+this <em>text is emphasised</em>    <!-- add emphasis to text -->
+this is an <i>Italic</i> word       <!-- offset a range of text -->
+<!--
+  By default both tags will have the same visual effect in the web browser. The only difference is the meaning.
+    Emphasis tags stress the text contained in them
+    Italics represent off-set text and should be used for tech terms, titles, a thought or a phrase from another lang
+-->
 
 
-<!-- imgs -->
-<img /> <!-- empty element (self closing tag) -->
 
 
-<!--  -->
+<!-- lists -->
+<ul>
+  <li>list item 1</li>
+  <li>list item 2</li>
+  <li>list item 3</li>
+</ul>
+<!-- unordered list -->
+<ol>
+  <li>list item 1</li>
+  <li>list item 2</li>
+  <li>list item 3</li>
+</ol>
+<!-- ordered list -->
+  
+
+
+
+<!-- containers -->
+<div>division</div>
+<!-- generic container for elems and has no effect on the content unless it is styled by CSS -->
+<div>
+  <p>This is a paragraph inside a division</p>
+</div>
+
+
+
+
+<!-- links -->
+<a></a>
+<!-- anchor element is used to link web pages for website building -->
+<a>even with a text</a>
+<!-- This link will not work because no path provided -->
+<a href="linked_html.html">click to go to another web page</a>
+<!-- href is an attribute takes relative path of the web page as a str val -->
+<!-- Now it's blue and clickable -->
+
+
+
+
+<!-- images -->
+<img /> 
+<!-- 
+  we use image tags in HTML to link to image files
+  Image element is empty element (with a self closing tag)
+-->
+<img src="logo.jpg">
+<!-- src is an attribute takes relative path of the img as a str val -->
+<!-- Now the img is displayed with it's actual width and height -->
+<img src="logo.jpg" width="100">
+<img src="logo.jpg" width="100" height="200">
+<!-- controling the dimensions of the img -->
+<img src="logo.jpg" alt="My Logo">
+<!--
+  It's good practice to add a short description for images.
+  It helps improve accessibility and search engine rankings
+  alt text isn't displayed anywhere on the site but will be read by assistive tech such as screen readers
+  Screen readers and other accessibility tools use the alt attribute to provide information to their users
+-->
+
+
+
+
+<!-- tables -->
+<table>
+  <tr>
+    <td>table data 11</td>
+    <td>table data 12</td>
+  </tr>
+  <tr>
+    <td>table data 21</td>
+    <td>table data 22</td>
+  </tr>
+</table>
+<!--
+  basic structure for table
+  tr stands for table row
+  td stands for table data (cell or each col in the row)
+  all elements must be inside a table elem
+  note that it doen't look like a table but we will learn how to clear that with CSS
+-->
+<table>
+  <tr>
+    <th>table head 1</th>
+    <th>table head 2</th>
+  </tr>
+  <tr>
+    <td>table data 11</td>
+    <td>table data 12</td>
+  </tr>
+  <tr>
+    <td>table data 21</td>
+    <td>table data 22</td>
+  </tr>
+</table>
+<!--
+  To make table more clear, add headers to the columns
+  th stands for table head (cell at the first row for categories titles)
+-->
+
+
+
+
+<!-- Forms -->
+<form action="" method="">
+  <label>label for field1:</label><br>
+  <input type="text">
+  <br>
+  <label>label for field2:</label><br>
+  <input type="password">
+  <br>
+  <input type="submit">
+</form>
+<!--
+  Actions specifies the URL or path that the form should submit the request to
+  When the action attribute is not specified, it submits the request to the same path as the current web page
+  with method attribute you can specify the HTTP method to use for the HTTP request when a user submits the form
+  input elem is a field where user can enter data
+  type attribute takes many values:
+    - (text) makes the field allow diff chars and make it visible
+    - (password) the same but hide the chars as a password typing
+    - (submit) used as a button to submit the form
+  label elem is added to make the form user friendly (easy to read and follow)
+  all elems should be inside form elem
+-->
+<form action="">
+  <input type="checkbox" name="op1" value="option1">
+  <label for="op1">option1</label>
+  <br>
+  <input type="checkbox" name="op2" value="option2">
+  <label for="op2">option2</label>
+  <br><br>
+  <input type="radio" name="ch1" value="choice1">
+  <label for="ch1">choice1</label>
+  <br>
+  <input type="radio" name="ch2" value="choice2">
+  <label for="ch2">choice2</label>
+</form>
+<!--
+    - (checkbox) makes it possible to check multiple choices from a set of choices
+    - (radio) like checkboxes however u can chek only one choice
+  use the name and value attributes to configure how the data is sent to the server
+-->
+<form action="">
+  <input type="number" name="numericalVal">
+  <br>
+  <input type="email" name="email">
+  <br>
+  <input type="file" name="upload">
+  <br>
+  <textarea name="multiline" cols="30" rows="10"></textarea>
+  <select name="drop">
+    <option value="val1">value 1</option>
+    <option value="val2">value 2</option>
+    <option value="val3">value 3</option>
+  </select>
+</form>
+<!--
+    - (number)
+    - (email)
+    - (file)
+    - (textarea)
+      - as text but provid multi-line field
+      - has controlled height and width through cols and rows attribute
+    - (select)
+      - a drop down list that allows multiple choices
+      - to provide choices u should embedd option elems inside select elem
+-->
+
+
+
+
+<!--
+  notes
+  -----
+    - Website consists of webpages and to link them we use anchor tags
+    - Imgs are not inserted into web pages but img tag creates a placeholder for the img on the web page
+    - There are two HTTP methods to submit the form data, GET and POST:
+      - GET HTTP method retrieves information from the server
+      - POST HTTP method sends data to the server
+    - 
+-->
