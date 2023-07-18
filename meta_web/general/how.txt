@@ -6,5 +6,10 @@ Web Browsers & Dev Tools
 
 Front-End, Back-End, Full-Stack
 
-Web Technologies and products
+Web Techs and prods
 
+pkg managers, handlers, dep tree, v, frameworks, libs, bundling
+
+web components, rwd UI
+
+deploying
