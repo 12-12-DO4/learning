@@ -5,3 +5,4 @@ JS ---> JavaScript Programing Language
 DOM --> Document Object Model
 WAI --> Web Accessibility Initiative
 ARIA -> Accessible Rich Internet Application
+RWD --> Responsive Web Design
