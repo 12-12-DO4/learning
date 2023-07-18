@@ -2,7 +2,7 @@ HTML
   for web page structure
 CSS
   for styling
-HTML + CSS make static web pages and websites
+HTML + CSS make static web pages and websites on sep pages
 
 JS
   to add interactivity
@@ -13,3 +13,16 @@ DOM
 React
   is a JS library relies on DOM
 
+Bootstrap
+  feature-packed, powerful and extensible front-end toolkit
+  Some people refer to it as a
+    - front-end framework
+    - CSS framework or a CSS lib (trying to be more specific)
+  popular lib of CSS & JS code you combine to quickly build visually appealing websites (responsive)
+  (doc) https://getbootstrap.com/docs/5.3/getting-started/introduction/
+
+npm (Node pkg manager)
+  The most common pkg manager for front-end dev automatically downloads all of the dependency tree
+
+Gulp, Webpack
+  bundlers that automatically combine deps into a single file
