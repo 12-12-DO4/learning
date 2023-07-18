@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap5</title>
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <!--
+    add the CSS lib for Bootstrap in the head element using a link tag in the head elem with:
+      - href attr to link the CSS lib I'm including
+      - rel attr to specify that the link is for a style sheet
+  -->
+</head>
+<body>
+  <p class="container">
+    <p class="row">
+      <p class="col-12 col-lg-6">
+        <p class="alert alert-primary" role="alert">primary color is blue</p>
+        <p class="alert alert-danger" role="alert">danger color is red</p>
+        <p class="alert alert-info" role="alert">info is to notify what's new</p>
+        <p>this is a <span class="badge bg-primary">badge</span> with primary color (blue)</p>
+      </div>
+      <div class="col-12 col-lg-6">
+        <img src="logo.jpg" alt="My logo" class="img-fluid">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-lg-6">
+        <div class="card">
+          <img src="logo.jpg" alt="card-img-top">
+          <div class="card-body">
+            <h2 class="card-title">for card title</h2>
+            <p class="card-text">for card description</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6">
+        <table class="table">
+          <tr>
+            <td>data1</td>
+            <td>data2</td>
+          </tr>
+          <tr>
+            <td>data3</td>
+            <td>data4</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-lg-6">
+        <form>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox">
+            <label>switch</label>
+          </div>
+          <div class="input-group">
+            <span class="input-group-text">$</span>
+            <input type="text" class="form-control">
+            <span class="input-group-text">.00</span>
+          </div>
+          <div class="form-floating">
+            <input type="email" class="form-control" id="linkedlbl" placeholder="Address">
+            <label for="linkedlbl">floating label</label>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <!--
+    Bootstrap Grid sys:
+      - container
+        - root elem of grid
+        - contains pads and aligns your content
+        - its width is determined based on the current responsive breakpoint
+
+      - rows & cols
+        - add rows and inside each row add cols
+
+      - 12 col grid sys that can be fluid or fixed
+        - to control how many spaces a col uses suffix a num
+        - cols will wrapped in new rows, if we exceed the 12 col space (we can use this to stack content)
+        - For mobile devices, set cols to use 12 spaces by adding 12 as a suff to the col rule
+          - col-12
+        - For desktop, set them to 6 cols each by using a col-lg rule and adding the col sizes, 6, as a suff
+          - col-lg-6
+  -->
+
+  <!--
+    Modifiers
+      - CSS class to change the visual style of components (bg-color)
+      - primary --------- blue
+      - secondary ------- gray
+      - warning --------- green
+      - danger ---------- red
+      - success --------- yellow
+      - info ------------ sky
+      - light ----------- white
+      - dark ------------ black
+    
+    Infixes & Breakpoints
+      triggers for how your layout changes across device or viewpoint sizes:
+        - Extra small
+          (default breakpoint (mobile first), screen width < 576px)
+        
+        - Small
+          (sm, screen width >= 576px)
+        
+        - Medium
+          (md, screen width >= 768px)
+        
+        - Large
+          (lg, screen width >= 992px)
+        
+        - Extra large
+          (xl, screen width >= 1200px)
+        
+        - Extra extra large
+          (xxl, screen width >= 1400px)
+  -->
+  <script src=""></script>
+  <!--
+    Bootstrap also provides a JS lib that enables enhanced func, such as drop-downs and tooltips
+    add the JS lib for Bootstrap in the body element using a script elem with:
+      - src attr to the script elem to specify the link to the lib
+  -->
+</body>
+</html>
