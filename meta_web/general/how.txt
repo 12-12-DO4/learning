@@ -1,6 +1,6 @@
-How the Internet works?
+How the Internet works? (req-res cycle)
 
-Networks and Protocols
+Networks, Protocols and servers
 
 Web Browsers & Dev Tools
 
@@ -13,3 +13,15 @@ pkg managers, handlers, dep tree, v, frameworks, libs, bundling
 web components, rwd UI
 
 deploying
+
+SPA, static & dynamic content, caching, bundling, lazy loading
+
+Accesiblity
+
+Performance
+
+MVC
+
+render, lightweight, reconciliation, DOM, biding, injection, hierarchy
+
+React Fiber Architecture, priority
