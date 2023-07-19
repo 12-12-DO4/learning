@@ -3,15 +3,28 @@ HTML
 CSS
   for styling
 HTML + CSS make static web pages and websites on sep pages
+HTML & CSS (markup & styling langs not programming langs)
 
 JS
-  to add interactivity
+  programming lang used to add interactivity to web pages or websites
 DOM
   represents all tags, elements, texts, ... as nodes or objects (parent, child)
   We access the DOM using JS to make dynamic websites
   There are many libraries and frameworks relies on DOM
 React
-  is a JS library relies on DOM
+  is a JS library relies on DOM (lib not framework)
+  a lib for building composable UIs present data that changes over time by breaking them into comps
+  when your comp is first init, render method is called
+  generating a lightweight representation of your view
+  (a string of markup is produced and injected into the doc)
+  When your data changes, the render method is called again
+  in order to perform updates as efficiently as possible
+  we diff the return val from the prev call to render with the new and gen a min set of changes to DOM
+  data returned from render is neither string nor DOM node
+  it’s a lightweight des of what DOM should look like
+AngularJS
+  provides a declarative interface via directives and data binding
+  requires a linking function to manually update DOM nodes
 
 Bootstrap
   feature-packed, powerful and extensible front-end toolkit
@@ -26,3 +39,11 @@ npm (Node pkg manager)
 
 Gulp, Webpack
   bundlers that automatically combine deps into a single file
+
+React Fiber Arch
+  allows React to incrementally render the web page
+  instead of immediately updating DOM with all virtual DOM changes, React can spread the update over time
+  React can optimize when and where updates occur to DOM to significantly improve app performance and responsiveness to user input
+  it's as a (priority sys):
+    highest priority changes, the elems visible to the user (updated first)
+    lower priority changes, the elems not currently displayed (updated later)
