@@ -30,3 +30,5 @@ standard math seq of calc
 
 declaration, datatypes, type casting, coercion, implicit & explicit, dynamic typing, Operator associativity
 
+bug, error(types, handling), warning
+
