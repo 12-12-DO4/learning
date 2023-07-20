@@ -9,3 +9,5 @@ RWD --> Responsive Web Design
 SPA --> Single Page App
 JSON -> JS Obj Notation
 MVC --> Model View Controller
+ASI --> Automatic Semi-colon Insertion
+ECMA -> European Computer Manufacturers Association
