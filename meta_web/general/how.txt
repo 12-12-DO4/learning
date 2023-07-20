@@ -25,3 +25,8 @@ MVC
 render, lightweight, reconciliation, DOM, biding, injection, hierarchy
 
 React Fiber Architecture, priority
+
+standard math seq of calc
+
+declaration, datatypes, type casting, coercion, implicit & explicit, dynamic typing, Operator associativity
+
