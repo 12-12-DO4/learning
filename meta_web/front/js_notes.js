@@ -79,3 +79,51 @@ try {
 }
 console.log("but outside try catch blocks is excuted")
 // try catch stat can keep a program running even when it encounters an err
+
+// always use defensive prog to avoid pugs and errs
+
+
+/*
+In object oriented programming (OOP), the data and funcs that work on that data are combined inside objs
+In functional programming (FP), data and funcs that operate on it are clearly separated
+There are many more concepts and ideas in FP here are some of the most imp ones:
+  - First-class funcs
+    func is just another value that we can:
+      - pass to other funcs
+      - save in a var
+      - return from other funcs
+    it's perfectly normal to pass a func invocation to another func
+
+  - Higher-order func
+    is a func that has either one or both of the following chars:
+      - accepts other funcs as args
+      - returns funcs when invoked
+    There's no "special way" of defining it. It is simply a feature of the lang
+
+  - Pure funcs and side-effects
+    pure func returns the exact same result as long as it's given the same vals
+    if pure so it shouldn't have side-effects ( instances where func makes changes outside itself)
+    side-effects are like:
+      - changing var vals outside of the func itself, or even relying on outside vars
+      - calling a Browser API (even the console itself!)
+      - calling Math.random() - since the val cannot be reliably repeated
+*/
+
+
+/*
+scopes
+In the ES5 only funcs can build local scope
+ES6 introduced a new variety of scope known as block scope (when you build vars with let or const)
+var dec with "var" keyword (most lenient):
+  - can be used even before dec (will give undef)
+  - can be redec
+  - is scoped to a func or if they are dec outside the func their scope is global
+the behavior of "let" and "const (most strict)" is more strict as their var:
+  - cannot de used before dec
+  - can be redec
+  - is scoped to the block, even within if statements and loops
+for diff among "var", "let" & "const" keywords:
+  - Vars with "var" can be used even before dec, may be assigned during dec and can be reassigned after dec
+  - Vars with "let" may be assigned during dec and can be reassigned after dec
+  - Vars with "const" must be assigned during dec and can't be reassigned
+*/
