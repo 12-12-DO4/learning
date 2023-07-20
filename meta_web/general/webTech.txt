@@ -6,7 +6,24 @@ HTML + CSS make static web pages and websites on sep pages
 HTML & CSS (markup & styling langs not programming langs)
 
 JS
-  programming lang used to add interactivity to web pages or websites
+  high level programming lang has to be converted to binary code so that a CPU can work with it
+  used to to add mouseover effects and add interactivity to web pages or websites
+  Java and JavaScript are in no way related
+  but since the Java lang was so popular at the time, the name was changed from LiveScript to JavaScript
+  is not a completely separate, stand-alone entity, exists as an implementation known as a JS engine
+  Traditionally, the only environment in which it was possible to run a JavaScript engine, was the browser
+  JS engine was just another building block of the browser
+  was there to help a browser accomplish its users' goal of utilizing the internet for work, research, play ..
+  JS engine itself comes with different ways to interact with various other parts of the browser (APIs)
+  Thus, the code that you write in the JS allows you to:
+    - Interact with the JS engine inside of the browser
+    - Interact with other browser func exists outside of the JS engine, but is still inside the browser
+  this all changed in 2009, when Node.js was built by a way to use a JS engine as a stand-alone entity
+  Finally, it was possible to use JS outside of the browser, as a sep program on cmd or as a server-side env
+ECMAScript
+  In 1996 Netscape made a deal with the organization known as ECMA to draft the specification of the JS lang
+  ECMA-262 is a standard that specifies how the JS lang should work
+  There have been 12 ECMA-262 updates - the first one was in 1997
 DOM
   represents all tags, elements, texts, ... as nodes or objects (parent, child)
   We access the DOM using JS to make dynamic websites
