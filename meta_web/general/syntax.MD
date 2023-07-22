@@ -45,7 +45,7 @@
 |`==`|eqeq (ordinary comparison eq)|
 |`===`|eqeqeq (strict eq)|
 |`!==`|noteqeq (strict not eq)|
-|`...`|ellipsis|
+|`...`|ellipsis (spread, rest op)|
 |`${}`|variable interpolation|
 |`''''''`|docstring|
 
@@ -57,7 +57,9 @@ selector-in-kebab-case {
 ```
 ``` JS
 objInCamelCase = {
-  keyInCamelCase: value,
+  1: value, // key as a number
+  key: value, // one word str key can be writen without quotes
+  "a str key": value, // multi-word str key must be in quotes
 }
 
 // json
