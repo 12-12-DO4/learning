@@ -292,3 +292,59 @@ var better = new WithDefaultParams();
 better.calculate(); // Result: 6
 // there is a ES6 feature allows to set a default param inside a func definition first
 
+
+const fruits = ['kiwi','mango','apple','pear'];
+
+function appendIndex(fruit, index) {
+    console.log(`${index}. ${fruit}`)
+}
+fruits.forEach(appendIndex);
+
+fruits.forEach((fruit, index) => {
+  console.log(`${index}. ${fruit}`)
+});
+
+
+/*
+data structures
+arrs are ordered collections of vals
+sets are collections of unique vals (pass it an arr to quickly filter it for unique members)
+maps are made up of iterable key value pairs
+objs are unordered collections of key-val pairs, but not iterable
+Other data structures in JS:
+  Besides the built-in data structs in JS, it's possible to build non-native, custom data structs
+  Queues, Trees, Graphs, Linked lists (singly-linked and doubly-linked)
+
+choosing a proper data struct affects code as it comes with some built-in func makes it 
+  easier to perform certain tasks
+  makes it harder or even impossible without converting code to a proper data structure
+
+sometimes you don't pick the data struct
+Perhaps that data comes in from a third-party data provider
+all you can do is code your program so that it consumes it
+
+forEach() method
+  for more compact code
+  accepts func that will work on each arr item
+    first param is the current array item itself
+    second (optional) param is the index
+  but perhaps somewhat harder to read. To increase readability, sometimes arrow funcs are used
+
+filter() method
+  filters arrs based on a specific test and return only passed
+
+map() method
+  map each arr item over to another arr's item based on states inside the func passed-in to map as a param
+
+To make a new Map
+  use the Map constructor
+  To add a key-value pair, use set(key, value) method
+  To get a specific val, use get(key) method
+*/
+
+/*
+spread operator "..." can be used to:
+  Convert a str to arr
+  Copy either obj or arr into a sep obj  (only performs a shallow copy of the src arr or obj)
+  Add new members to arrs without using the push() method
+*/
