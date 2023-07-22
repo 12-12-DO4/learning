@@ -5,6 +5,13 @@ ASI
   adding ; in JS is optional - and somewhat of a stylistic pref
 */
 
+console.log(
+  1 + 3, // 4 sum
+  "He" + "llo", // Hello concat
+  "Hello" + 2, // Hello2 concat str
+  ["abc"] + ["def", "ghi"] // ["abcdef,ghi"] concat arr
+);
+
 console.log("%cHello, World", "color: blue; font-size: 40px");
 // styling the logged text won't work at VSCode output window but it works at the brower's console
 
@@ -44,7 +51,6 @@ console.log(
 
 console.log(
   "Hello".indexOf("l"), // only first
-  "hello".match('ll'), // returns arr if matches and null obj if not match
   (10).toString(2) /* '1010' Base 2 (binary) */, (10).toString(8), // 12 Base 8 (octal)
   "con".concat("cate").concat("nate"), // concatenate mulltiple times
   "Hello".toUpperCase(), "HeLLo".toLowerCase(), "hello"[0].toUpperCase(), "Hello".charAt(0).toLowerCase()
@@ -84,8 +90,7 @@ console.log("but outside try catch blocks is excuted")
 
 
 /*
-In object oriented programming (OOP), the data and funcs that work on that data are combined inside objs
-In functional programming (FP), data and funcs that operate on it are clearly separated
+In FP, data and funcs operate on it are clearly separated
 There are many more concepts and ideas in FP here are some of the most imp ones:
   - First-class funcs
     func is just another value that we can:
@@ -127,3 +132,163 @@ for diff among "var", "let" & "const" keywords:
   - Vars with "let" may be assigned during dec and can be reassigned after dec
   - Vars with "const" must be assigned during dec and can't be reassigned
 */
+
+
+const date = new Date();
+console.log(date);
+// const math = new Math(); // TypeErr: Math isn't a constructor
+let apple1 = new String("apple");
+let apple2 = "apple"; // string literal, primitive JS val, will always be more performant
+console.log(new String("apple") === new String('apple')); // false: each object in JS is unique
+console.log(
+  "abcd".match(/d/), // null
+  "abcd".match(/a/) // ['a', index: 0, input: 'abcd', groups: undefined]
+)
+/*
+OOP allows writing modular, flexible and reusable code
+data and funcs work on it are combined inside objs
+
+some built-in objs have constructors, when they serve a particular purpose:
+  to allow us to instantiate a specific instance of a given object's constructor
+  That obj is perfectly suited for having constructor as each new obj instance have unique data by definition
+Other built-in objs don't have constructors and don't need it:
+  They're static objs with props and methods can be accessed directly, from the built-in obj itself
+  there is no point in building an instance of the built-in that obj to be able to use its func
+using constructor functions on all built-in objects is sometimes not the best approach
+  especially for obj constructors of primitive types, namely: String, Number, and Boolean
+var, being a primitive value, will always be more performant than var, which is an obj
+  Instead of using Object constructor, use object literal syntax: {}
+  Instead of using String constructor, use string literal syntax: "" or ''
+  Instead of using Array constructor, use array literal syntax: []
+  Instead of using Function constructor, use function literal syntax: (){} or ()=>{}
+  Instead of using RegExp constructor, use pattern literal syntax: /()/
+However, when building objs of other built-in types, we can use the constructors
+  new Date(); new Error(); new Map(); new Promise(); new Set(); new WeakSet(); new WeakMap();
+
+each object in JS is unique:
+  it is not the vals that you pass to the constructor, but rather the memory loc where objs are saved
+*/
+
+class Train {
+  constructor(color, lightsOn) {
+    this.color = color;
+    this.lightsOn = lightsOn;
+  }
+  toggleLights() {
+    this.lightsOn = !this.lightsOn;
+  }
+  lightsStatus() {
+    console.log('Lights on?', this.lightsOn);
+  }
+  getSelf() {
+    console.log(this);
+  }
+  getPrototype() {
+    var proto = Object.getPrototypeOf(this);
+    console.log(proto);
+  }
+}
+
+class HighSpeedTrain extends Train {
+  constructor(passengers, highSpeedOn, color, lightsOn) {
+    super(color, lightsOn);
+    this.passengers = passengers;
+    this.highSpeedOn = highSpeedOn;
+  }
+  toggleHighSpeed() {
+    this.highSpeedOn = !this.highSpeedOn;
+    console.log('High speed status:', this.highSpeedOn);
+  }
+  toggleLights() {
+    super.toggleLights();
+    super.lightsStatus();
+    console.log('Lights are 100% operational.');
+  }
+}
+
+var myFirstTrain = new Train('red', false);
+console.log(myFirstTrain); // Train {color: 'red', lightsOn: false}
+
+var mySecondTrain = new Train('blue', false);
+var myThirdTrain = new Train('blue', false);
+
+var train4 = new Train('red', false);
+train4.toggleLights(); // undefined
+train4.lightsStatus(); // Lights on? true
+train4.getSelf(); // Train {color: 'red', lightsOn: true}
+train4.getPrototype(); // {constructor: f, toggleLights: f, ligthsStatus: f, getSelf: f, getPrototype: f}
+
+var train5 = new Train('blue', false);
+train5.toggleLights(); // undefined
+train5.lightsStatus(); // Lights on? true
+train5.getPrototype(); // {constructor: ƒ, toggleLights: ƒ, lightsStatus: ƒ, getSelf: ƒ, getPrototype: ƒ}
+
+var highSpeed1 = new HighSpeedTrain(200, false, 'green', false);
+highSpeed1.toggleLights(); // Lights on? true, Lights are 100% operational.
+highSpeed1.getPrototype(); // Train {constructor: ƒ, toggleHighSpeed: ƒ, toggleLights: ƒ}
+HighSpeedTrain.prototype.__proto__ // {constructor: ƒ, toggleLights: ƒ, lightsStatus: ƒ, getSelf: ƒ, getPrototype: ƒ}
+/*
+constructor func will be used to build props on the obj instance of the class without "function" keyword
+"this" keyword is an alias for obj (ref to future obj instance itself without specifying its name)
+The most common use case of "new" is to use with one of the built-in obj types
+prototype holds all the props shared by all the obj instances of the class
+use built-in "Object.getPrototypeOf()" method, and passing it "this" obj (obj instance is invoked)
+When the class syntax is used:
+  results in only shared methods being stored on the prototype
+  constructor() func sets up the mechanism for saving instance-specific vals at the time of obj instantiation
+To inherit from one class to a new sub-class, JS provides the "extends" keyword
+"super" keyword is used to specify what prop gets inherited from the super-class in the sub-class
+  pass in the inherited props that come from the super class
+  automatically inherit all methods exist on the super class prototype
+  If not used, runnig code whould produce err:
+    Uncaught ReferenceError: Must call super constructor in derived class before accessing 'this' or returning from derived constructor
+*/
+
+class StationaryBike {
+  constructor(position, gears) {
+    this.position = position
+    this.gears = gears
+  }
+}
+
+class Treadmill {
+  constructor(position, modes) {
+    this.position = position
+    this.modes = modes
+  }
+}
+
+class Gym {
+  constructor(openHrs, stationaryBikePos, treadmillPos) {
+    this.openHrs = openHrs
+    this.stationaryBike = new StationaryBike(stationaryBikePos, 8)
+    this.treadmill = new Treadmill(treadmillPos, 5)
+  }
+}
+// using class instance as another class' constructor's prop
+
+var boxingGym = new Gym("7-22", "right corner", "left corner")
+console.log(boxingGym.openHrs) // 7-22
+console.log(boxingGym.stationaryBike) // StationaryBike { position: 'right corner', gears: 8 }
+console.log(boxingGym.treadmill) // Treadmill { position: 'left corner', modes: 5 }
+
+class WithDefaultParams {
+  constructor(num1 = 1, num2 = 2, num3 = 3, string1 = "Result:", bool1 = true) {
+      this.num1 = num1;
+      this.num2 = num2;
+      this.num3 = num3;
+      this.string1 = string1;
+      this.bool1 = bool1;
+  }
+  calculate() {
+      if(this.bool1) {
+          console.log(this.string1, this.num1 + this.num2 + this.num3);
+          return;
+      }
+      return "The value of bool1 is incorrect"
+  }
+}
+var better = new WithDefaultParams();
+better.calculate(); // Result: 6
+// there is a ES6 feature allows to set a default param inside a func definition first
+
