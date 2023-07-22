@@ -32,3 +32,7 @@ declaration, datatypes, type casting, coercion, implicit & explicit, dynamic typ
 
 bug, error(types, handling), warning
 
+classes(base=super, sub), prototype, objects, blueprint, constructors, instantiation, methods
+
+4 fund prins(inheritance, encapsulation, abstraction, polymorphism)
+
