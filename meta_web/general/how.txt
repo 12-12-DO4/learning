@@ -8,7 +8,7 @@ Front-End, Back-End, Full-Stack
 
 Web Techs and prods
 
-pkg managers, handlers, dep tree, v, frameworks, libs, bundling
+pkg managers, modules, handlers, dep tree, v, frameworks, libs, bundling
 
 web components, rwd UI
 
@@ -35,4 +35,6 @@ bug, error(types, handling), warning
 classes(base=super, sub), prototype, objects, blueprint, constructors, instantiation, methods
 
 4 fund prins(inheritance, encapsulation, abstraction, polymorphism)
+
+stringfy, parsing, third-party data-converting
 
