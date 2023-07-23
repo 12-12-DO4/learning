@@ -64,3 +64,9 @@ React Fiber Arch
   it's as a (priority sys):
     highest priority changes, the elems visible to the user (updated first)
     lower priority changes, the elems not currently displayed (updated later)
+
+JSON
+  very lightweight data interchange format based on JS objs ("stringified JS obj") and easier to handle in JS code
+  Besides being a data interchange format, it's also a file format
+XML
+  it was the most common data interchange file format before JSON
