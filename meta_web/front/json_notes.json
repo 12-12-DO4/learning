@@ -1,0 +1,22 @@
+{
+  "values": {
+    "primitive vals": {
+      "strs": "surrounded in double quotes",
+      "nums": 5,
+      "bools": true,
+      "empty": null
+    },
+    "complex vals": ["objs", "arrs"]
+  },
+  "notes": {
+    "0": {
+      "question": "What happens if you try to stringify datatype not accepted in JSON syntax (for ex, func)?",
+      "answer": "The operation will silently fail."
+    },
+    "1": {
+      "question": "what about trying to stringify other data types, such as a BigInt number, say 123n?",
+      "answer": "causing Err: Uncaught TypeError: Do not know how to serialize a BigInt."
+    }
+  }
+  
+}
