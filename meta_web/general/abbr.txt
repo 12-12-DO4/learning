@@ -12,3 +12,5 @@ MVC --> Model View Controller
 ASI --> Automatic Semi-colon Insertion
 ECMA -> European Computer Manufacturers Association
 XML --> Extensible Markup Language
+e2e --> end to end
+TDD --> Test Driven Dev
