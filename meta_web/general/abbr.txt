@@ -11,3 +11,4 @@ JSON -> JS Obj Notation
 MVC --> Model View Controller
 ASI --> Automatic Semi-colon Insertion
 ECMA -> European Computer Manufacturers Association
+XML --> Extensible Markup Language
