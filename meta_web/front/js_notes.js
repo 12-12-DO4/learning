@@ -380,3 +380,113 @@ JSON is str, but it must be a properly-formatted string
 */
 
 
+/*
+Node.js can run in multiple settings
+for ex, on the cmd, in desktop app, or on the back-end of web app (on a server)
+it's a completely sep, standalone env without ties to the JS in the browser
+*/
+
+
+function toBeTested() {
+  let isSuccessful = true;
+  return isSuccessful;
+}
+module.exports = toBeTested;
+/*
+Testing is the act of confirming that it works as outlined in the SW's reqs ensures 3 things:
+  Conciseness, Clarity, repeatability
+
+There are many aspects of software testing:
+  for UX designer
+    making sure that the website looks and behaves as expected
+  for PM on a SW proj
+    a specific piece of software works well with other parts of your system
+  for SW eng
+    writing code that
+      is bug free
+      doesn't break the existing func
+      satisfies the reqs as set out in given task based on motivations
+
+there are different kinds of testing rep 3 level pyramid:
+  e2e tests
+    finally at the top
+    the slowest and most expensive tests to run and take the most time to set up and run
+    make sure that the entire product (finished SW prod) behaves as it should
+      tries to imitate how a user might interact with your app
+      you need to open your web app in browser and then test it by interacting with the page the same way as user
+      clicking on the log in button or going through the process of adding an item to the shopping cart ...
+    The person testing the app doesn't have to be a dev
+    testing frameworks available on the market:
+      WebdriverJS - Protractor - Cypress
+
+  integration tests
+    in the center of the pyramid
+    tests are faster and cheaper than e2e tests but not as fast or as cheap as unit testing (av speed and expense)
+    testing how sep parts of your sys interact with other parts
+    testing SWs:
+      react testing lib - enzyme
+
+  unit tests
+    first at the base of the pyramid
+    sep, self contained, easy to write and have the highest speed and the lowest cost
+    the process of sep testing the smallest units of your src code in isolation (func or method)
+    JS doesn't have built-in objs or methods that would allow for tests to be written
+    many diff libs have been built to tackle the issue of testing
+    Jasmine, Mocha, Karma, and qUnit, Jest
+
+Jest
+  allows you to test plain JS code, React, Babel, TypeScript, Node, Angular, Vue, and various other frameworks
+  come with 3 main testing feats:
+    code coverage
+      there are expectations to be tested for each line of code
+      is a measure of what percentage of my code is covered by tests
+      80% code coverage means only one-fifth of my entire code base is not covered by tests
+      even 100% code coverage doesn't mean every conceivable expectation is tested
+      is a handy tool to gauge the amount of my code base that's included in tests
+        The higher the code coverage, the lower the chance of having unidentified bugs
+        the higher the percentage of code coverage, the lower the amount of time required to write new tests
+          depends on whether there are incomplete SW reqs pending or going to receive more reqs in the future
+
+    mocking
+      The needed data comes from the mock rather than from the backend
+      make sure that your unit testing is stand-alone
+        sep the code that you are testing from its related deps
+      pretend that users are already there if the backend hasn't been built yet
+      test the front-end func of your web app as if it came back from server (when in fact it came from client)
+      helpful as web apps are built by some devs work on the back-end and others on front-end
+        so the front-end devs can finish their site of the new feat independently (avoid bottlenecks)
+      devs can use mocking to ship feats faster
+        Some libs, such as sign-on, focus specifically on mocking
+        the great thing about Jest is you use its mock funcs by employing it without any additional i
+        easy to test async code in Jest
+          There are no difficult setups
+          tests are relatively easy to code even for newcomers
+    
+    snapshot testing
+      is used by devs to verify that there are no regressions in the DOM after some changes in the code base
+
+TDD
+  write as little code as possible to make the test pass for this test to pass
+  This process is usually (Red - Green - Refactor)
+    read the reqs for the SW that you are writing. (reqs are passed to you by the PM)
+    Next you write a failing test
+    then you update your source code, so it resolves the requirement
+    After that you run a test that passes
+    Finally, you re factor your implementation
+  
+    Red represents the failing test
+    Green represents the passing test after you make updates to the source code
+    Refactor represents the final tweaks to the code that don't change implementation details
+      which can always be confirmed by running another subseq test when implemented correctly
+    
+    advs:
+      allows for automated testing in any platform projs grow bigger over time and become complex
+      making sure that all tests are passing is strong signal that current and prev reqs 
+        for this piece of your app have been delivered successfully and that nothing is breaking
+      minimizing regressions that is accidental bugs introduced to old code by coding a new req
+      you also have proof that your new implementation is not breaking other parts of the app
+      automate these tests easily and keep verifying again and again that the system works as expected
+      test your implementations with various inputs
+      tests become a specific kind of documentation for the new members of your team
+*/
+
