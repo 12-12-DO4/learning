@@ -348,3 +348,35 @@ spread operator "..." can be used to:
   Copy either obj or arr into a sep obj  (only performs a shallow copy of the src arr or obj)
   Add new members to arrs without using the push() method
 */
+
+/*
+how to take input from users?
+the quickest and easiest way to capture input on website by built-in method prompt()
+  pass it str msg and assign the method to var
+doing it this way is not the most efficient approach, especially in more complex scenarios use form instead
+  code script which will take an input from an HTML form input field
+  listen for change events and assign val of input field to var
+*/
+
+
+const aJSON = '{"greating": "Hello!"}'
+console.log(JSON.parse(aJSON)); // converts it to plain JS obj
+const aPlainJS = {greating: "Hi!"}
+console.log(JSON.stringify(aPlainJS)); // converts it to JSON
+/*
+JSON
+Before JSON, the most common data interchange file format was XML:
+  due to XML's syntax, it required more chars to describe data that was sent
+  since it was a specific stand-alone lang, it wasn't as easily inter-operable with JS
+
+2 major reasons JSON format is dominant data interchange format:
+  First, it's very lightweight, with syntax very similar to "a stringified JavaScript object"
+  Second, it's easier to handle in JS code (JSON is just JS)
+
+JSON is str, but it must be a properly-formatted string
+  JSON is a subset of JS (all JSON code is JS, but not all JS code is JSON)
+  If JSON str is not properly formatted, JS would not be able to parse it into a JS obj
+  Only a subset of vals in JS can be properly stringified to JSON and parsed from a JS obj into a JSON str
+*/
+
+
