@@ -40,4 +40,5 @@ stringfy, parsing, third-party data-converting
 
 testing, TDD
 
-SEO, symantic design, 
+SEO, symantic design, UX, metadata, SM cards
+
