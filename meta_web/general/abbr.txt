@@ -17,3 +17,5 @@ TDD --> Test Driven Dev
 SEO --> Search Engine Optimization
 UI ---> User interface
 UX ---> User Experience
+JSX --> JavaScript XML
+Repl -> read-eval-print loop 
