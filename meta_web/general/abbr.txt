@@ -15,3 +15,5 @@ XML --> Extensible Markup Language
 e2e --> end to end
 TDD --> Test Driven Dev
 SEO --> Search Engine Optimization
+UI ---> User interface
+UX ---> User Experience
