@@ -387,6 +387,41 @@ for subscript like: H<sub>2</sub>O
         set the width to device dash with and the initial scale to 1.0 (the most used)
 -->
 
+<head>
+  <meta property="og:title" content="My First Web Page">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://example.com">
+  <meta property="og:image" content="https://example.com/me.jpg">
+  <meta property="og:description" content="this is a description for my first web page">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Do4's website">
+</head>
+<!--
+  OGP also uses meta tags added to the head elem, but they are slightly diff
+    instead of 'name' attr, it uses the "property" attr to define metadata name
+      each prop starts with "og:" (as a convention to identify it as an OGP related tag)
+    it uses the content attribute to define metadata val
+    req you must always include 4 props on a webpage
+      Together, they enables social media platforms to create a preview of the shared web link
+      title
+        defines the title of the page, this is the text that will appear in the preview
+      type
+        defines the type of content, such as website, video, music, or article
+        Depending on the val specified as type, other props may be req
+      url
+        defines permanent web address that social network must use for the specific page
+      image
+        defines URL to img must be display when the website is shared
+    There are several other optional props
+      description
+        provides a des of the webpage
+      locale
+        des lang and territory of the webpage's content
+        For ex, en_US specifies that the page is in E and the locale is US
+      site_name
+        describes the name of the overall website the webpage belongs to
+-->
+
 
 
 
