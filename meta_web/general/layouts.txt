@@ -1,0 +1,21 @@
+Top navbar layout
+Websites often have a top navbar layout to provide a set of essential anchor links to the user.
+These typically link to the main areas of the website, such as product pages, careers pages or contact pages.
+This provides the visitor to the website with a consistent navigation experience.
+
+Carousel layout
+Product-focused websites often use a large carousel on their homepage 
+  to highlight their featured products, discounts and offers. 
+The carousel contains content items that will rotate through the carousel area at a fixed interval.
+
+Blog layout
+The blog layout is used to feature multiple content items of differing importance.
+It is often seen on news websites where new articles will appear on the page each day based on current events.
+layout typically features different-sized feature areas followed by a series of article summary areas 
+  that link to full articles.
+
+Dashboard layout
+are often used in enterprise SW for managing various web applications.
+They typically feature a sidebar for navigation with the main content area containing forms 
+  for configuration or reporting data such as graphs and tables.
+This trendy layout provides a good ux for business users.
