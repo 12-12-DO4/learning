@@ -70,3 +70,9 @@ JSON
   Besides being a data interchange format, it's also a file format
 XML
   it was the most common data interchange file format before JSON
+
+JSX
+  
+Babel
+  is a JS Compiler
+  allows you to transpile JSX into plain JS code (which can be understood by a browser)
