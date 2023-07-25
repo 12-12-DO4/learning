@@ -61,16 +61,45 @@
 </p>
 <!-- now it's multi-line -->
 
+<blockquote>styled text with double quotes around</blockquote>
+<q>this is for a short quotation</q>
+
 This is a<strong>bold</strong>word  <!-- indicate that a range of text has importance -->
 <br>This is a <b>bold</b>word too    <!-- draw the reader's attention to a range of text -->
 
+these are <mark>yellow highlighted</mark> words
+
+this is a <del>deleted</del> word with <s>line</s> through
+this is an <ins>inserted</ins> word with <s>line</s> under
+
 this <em>text is emphasised</em>    <!-- add emphasis to text -->
 this is an <i>Italic</i> word       <!-- offset a range of text -->
+<cite>title for creative work (book, poem, song, movie, painting, sculpture)</cite>
 <!--
   By default both tags will have the same visual effect in the web browser. The only difference is the meaning.
     Emphasis tags stress the text contained in them
     Italics represent off-set text and should be used for tech terms, titles, a thought or a phrase from another lang
 -->
+
+<pre>
+  this is for 
+  multi-line  pre-formated text
+  content saves      whitespaces
+</pre>
+<code>
+  for coding with 
+  a specific type 
+  of font
+</code>
+
+
+<abbr title="abbreviation">abbr</abbr>
+
+this word will be <small>small</small>
+
+for <var>variable</var> in math form
+for superscript like: X<sup>2</sup>
+for subscript like: H<sub>2</sub>O
 
 
 
@@ -88,15 +117,18 @@ this is an <i>Italic</i> word       <!-- offset a range of text -->
   <li>list item 3</li>
 </ol>
 <!-- ordered list -->
-  
-
+<dl>
+  <dt>term</dt>
+  <dd>defination</dd>
+</dl>
+<!-- defination list -->
 
 
 <!-- containers -->
 <div>division</div>
 <!-- generic container for elems and has no effect on the content unless it is styled by CSS -->
 <div>
-  <p>This is a paragraph inside a division</p>
+  <p>This is a <span>paragraph</span> inside a division</p>
 </div>
 
 
@@ -134,6 +166,17 @@ this is an <i>Italic</i> word       <!-- offset a range of text -->
   Screen readers and other accessibility tools use the alt attribute to provide information to their users
 -->
 
+<figure>
+  <img src="" alt="">
+  <figcaption>caption for the img</figcaption>
+</figure>
+
+<picture>
+  <source src="" type="">
+  <source src="" type="">
+  <img src="" alt="">
+</picture>
+
 
 
 
@@ -156,18 +199,28 @@ this is an <i>Italic</i> word       <!-- offset a range of text -->
   note that it doen't look like a table but we will learn how to clear that with CSS
 -->
 <table>
-  <tr>
-    <th>table head 1</th>
-    <th>table head 2</th>
-  </tr>
-  <tr>
-    <td>table data 11</td>
-    <td>table data 12</td>
-  </tr>
-  <tr>
-    <td>table data 21</td>
-    <td>table data 22</td>
-  </tr>
+  <caption>for table caption</caption>
+  <thead>
+    <tr>
+      <th>table head 1</th>
+      <th>table head 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>table data 11</td>
+      <td>table data 12</td>
+    </tr>
+    <!-- <colgroup>
+      <col>defines symantic group of columns in a table
+    </colgroup> -->
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>table data 21</td>
+      <td>table data 22</td>
+    </tr>
+  </tfoot>
 </table>
 <!--
   To make table more clear, add headers to the columns
@@ -242,6 +295,42 @@ this is an <i>Italic</i> word       <!-- offset a range of text -->
       - a drop down list that allows multiple choices
       - to provide choices u should embedd option elems inside select elem
 -->
+
+
+
+
+<body>
+  
+  <header>
+    <div class="logo"></div>
+    <nav>
+      main links
+      <menu></menu> or <ul></ul>
+    </nav>
+  </header>
+  
+  <main>  
+    <article>
+      blog post and prod
+      <section>inside article</section>
+    </article>
+    <section>in the main</section>
+    <aside>
+      secondary content not req to understand main content
+      <details>
+        <summary>title</summary>
+        collapsed details
+      </details>
+    </aside>
+  </main>
+  
+  <footer>
+    secondary links
+    <div class="copyright"></div>
+    privacy & cookie policy links
+  </footer>
+
+</body>
 
 
 
