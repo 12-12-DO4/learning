@@ -5,6 +5,11 @@ Capitalizing component name helps React to distinguish JSX elems from HTML elems
 */
 
 function Notes() {
+  const someStyles = {
+    color: "#eee",
+    fontWeight: "bold",
+    marginRight: "10px"
+  }
   return(
     <div className="notes">
       <div>React comp is much like a regular JS func</div>
@@ -54,6 +59,31 @@ function Notes() {
             </ul>
           </li>
         </ul>
+      </div>
+      <div className="props" >
+        like params in JS func allow you pass in vals as args, React uses props to pass data btw comps
+        <br /> Props are like a JS obj passed using JSX syntax
+        <br />When two comps communicate with each other, this communication is one directional. 
+        The component sending the props data is "parent" and the one receiving the data is "child"
+        <br />when you declare a comp using props, it must never modify its own prompts (pure func)
+      </div>
+      <div className="return">
+        return statements are the area of expressive syntax that allows you write regular HTML code 
+        as you'd like to have it in your rendered app. 
+        But if you need to return HTML code over multiple lines, it must be placed inside parentheses. 
+        <br />This allows devs to alternate btw regular HTML tags, 
+        and dynamic vals represented as JSX expressions inside curly braces.
+        <br />HTML code must be wrapped in a top level elem, such as a div tag. 
+        If you do not want to add extra div elems to the DOM, you can use fragment instead {/* <></> */}
+      </div>
+      <div className={someStyles} style={{color:"red", fontSize:"18px"}}>
+        you cannot use the keyword "class" to work with CSS classes in your HTML elems. 
+        As "class" is a reserved keyword in JS, you must use "className" instead. 
+        <br className="className"/>"className" is written in camelCase
+        <br />You can use "className" to list any number of CSS classes to style a specific JSX elem. 
+        This is just like how you use a class attr in regular HTML to style the comp in a sep CSS file.
+        <br style={{display: "block", padding:"10px"}}/>or using inline style and pass it a JS obj.
+        <br style={someStyles}/>props in camelCase, sep by commas, with str vals, in JS obj format.
       </div>
     </div>
   )
