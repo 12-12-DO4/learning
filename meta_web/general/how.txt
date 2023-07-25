@@ -42,3 +42,7 @@ testing, TDD
 
 SEO, symantic design, UX, metadata, SM cards
 
+react lib, component-based arch, virtual DOM, DOM manipulation, SPA, UI des, reusability, indep, rendering, 
+speed and performance, spaghetti code, memory, cache
+
+interpreting, transpiler
