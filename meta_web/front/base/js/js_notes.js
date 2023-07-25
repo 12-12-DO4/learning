@@ -490,3 +490,27 @@ TDD
       tests become a specific kind of documentation for the new members of your team
 */
 
+const var1 = (param1, param2) => {
+  state1;
+  state2;
+}
+const var2 = param1 => {
+  state1;
+  state2;
+}
+const var3 = param1 => state1; // (without "return" keyword)
+const var4 = _ => state1; // (if no params)
+const cond = Boolean("") ? true : false;
+/*
+ES6
+  arrow func
+  (params) => {states}
+  
+  ternary op
+  cond ? T : F
+
+  spread op
+  ...
+
+  
+*/
