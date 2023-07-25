@@ -1,2 +1,9 @@
 HTTP
+  Hypertext Transfer Protocol
 FTP
+  File Transfer Protocol
+OGP
+  Open Grapgh Protocol
+  introduced by Facebook
+  is a set of metadata rules that allows web pages to describe themselves to social networks.
+  it improves ux of shared links as it helps social media platforms create a preview of the shared web page
