@@ -72,7 +72,7 @@ XML
   it was the most common data interchange file format before JSON
 
 JSX
-  
+  is just syntactic sugar - meaning, a nicer way to write some hard-to-read code
 Babel
   is a JS Compiler
   allows you to transpile JSX into plain JS code (which can be understood by a browser)
