@@ -302,35 +302,90 @@ for subscript like: H<sub>2</sub>O
 <body>
   
   <header>
-    <div class="logo"></div>
-    <nav>
-      main links
-      <menu></menu> or <ul></ul>
-    </nav>
+    <img src="" alt="">
   </header>
   
-  <main>  
+  <nav>
+    main links
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </nav>
+  
+  <main>
+    <h1></h1>
     <article>
-      blog post and prod
-      <section>inside article</section>
+      <h2></h2>
+      <p></p>
     </article>
-    <section>in the main</section>
-    <aside>
-      secondary content not req to understand main content
-      <details>
-        <summary>title</summary>
-        collapsed details
-      </details>
-    </aside>
+    <article>
+      <h2></h2>
+      <p></p>
+    </article>
   </main>
   
   <footer>
-    secondary links
-    <div class="copyright"></div>
-    privacy & cookie policy links
+    <p class="copyright"></p>
   </footer>
 
 </body>
+<!-- symantic design -->
+
+
+
+
+<head>
+  <meta name="author" content="DO4">
+  <meta name="description" content="DO4's first web page">
+  <!-- <meta name="keywors" content="programing, web, development, HTML, CSS, JS, front-end"> -->
+  <meta name="robots" content="index, follow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<!--
+  nothing in head elem is displayed on the web page
+  meta elem is a self closing tag or empty elem with 2 main attrs:
+    name
+      specifies name of the metadata
+    content
+      specifies the value of the metadata
+  
+  metadata
+    author
+      the person and company who are the author of the web page
+    description
+      describes the content of the web page
+      often used by search engines as descriptive text in search res
+    keywords
+      was previously used to provide search keywords for search engines
+      however, this led lot of websites to use keywords metadata to manipulate search rankings
+      One of the major search engines now ignores it and another uses keywords metadata as spam indicators
+      it's recommended not to include this metadata in modern web pages
+    robots
+      tells search engines if and how they should analyze web page
+      name comes from the automated SW often referred to as bots, that search engines used to analyze websites
+      has four possible vals:
+        index
+          tells the bot to analyze the page
+        follow
+          tells the bot to also visit all links on the web page
+        noindex
+          tells the bot not to analyze the page
+          Some bots will ignore this so it's best not to rely on this to stop bots from analyzing your page
+        nofollow
+          tells the bot not to visit links on the web page
+          some bots will ignore this value so it's best not to rely on it
+    viewport
+      is imp in rwd for pages
+      when a web pages viewed on a phone or tablet,
+        device will by default attempt to render the web page as if it is being viewed on a desktop
+        many search engines now include websites mobile x as a part of their ranking algo
+      does not solve all the issues with browsing websites on mobile devices (other part of the soln is rwd)
+      There are many vals available:
+        set the width to device dash with and the initial scale to 1.0 (the most used)
+-->
 
 
 
