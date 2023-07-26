@@ -244,3 +244,40 @@ HTML Element Alignment
     - sets an element's position relative to the text content within a parent elem, Text will wrap around the elem
     - works with inline elems or block elem with width < its parent's width
 */
+
+input[required]:focus {
+  border: none;
+  outline: none;
+  border: 2px dashed #777;
+}
+
+input[required]:invalid {
+  border: 2px solid red;
+}
+
+input[required]:valid {
+  border: 2px solid green;
+}
+
+/*
+Form validation
+for input elem selector apply a pseudo-class selector
+  - invalid & valid
+    the key thing to know is that they are used to select elems based on their state, 
+    such as whether the input data is valid or invalid
+    all form fields are empty when the form loads initially, their state is still practically invalid
+    add CSS prop to set border of elem to red, 
+    This will cause all form fields to display red from the start like in this Real-world ex of a login screen
+  - focus
+    you only want fields to appear red as the user enters invalid data
+    checks if the user is currently entering data into this field
+    apply another pseudo-class called "focus"
+    Now the form will appear normal when the page first loads, 
+    and when the user inputs data, the field will turn red if the data is invalid
+*/
+
+/*
+styling form by CSS
+  browsers handle forms diff but with CSS makes all browsers display the form in the same way
+  styling of individual elems using selectors. It will display the same across browsers with consistent ux
+*/
