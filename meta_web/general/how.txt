@@ -46,3 +46,5 @@ react lib, component-based arch, virtual DOM, DOM manipulation, SPA, UI des, reu
 rendering, speed and performance, spaghetti code, memory, cache
 
 interpreting, transpiler
+
+props, hooks, states
