@@ -35,7 +35,7 @@
 |<code>``</code>|backticks (temp literal)|
 |`()`|parentheses (tuple literal)|
 |`[]`|square prackets (arr literal)|
-|`{}`|curly braces (obj and set literal)|
+|`{}`|curly braces (obj and set literal, JSX expression delimiters)|
 |`<>`|angle prackets (opening closing tags, not eq)|
 |`//`|double fwdslashes (comment, dev, RegExp literal)|
 |`**`|asterisk asterisk (pow, inside all dirs)|
