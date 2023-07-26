@@ -60,12 +60,35 @@ function Notes() {
           </li>
         </ul>
       </div>
-      <div className="props" >
+      <div className="props_vs_states" >
         like params in JS func allow you pass in vals as args, React uses props to pass data btw comps
         <br /> Props are like a JS obj passed using JSX syntax
-        <br />When two comps communicate with each other, this communication is one directional. 
-        The component sending the props data is "parent" and the one receiving the data is "child"
-        <br />when you declare a comp using props, it must never modify its own prompts (pure func)
+        <br />When two comps communicate with each other, this communication is one-way street (unidirectional). 
+        The component sending the props data is "parent" and the one receiving the data is "child". 
+        access props on data obj using the regular dot notation syntax of plain JS
+        <br />Props are immutable (cannot be changed). 
+        when you declare a comp using props, it must never modify its own prompts (pure func)
+        <br />React can be divided into props data and states data. 
+        <br />Props data is data <strong>outside</strong> the comps that it receives and works with but cannot mutate. 
+        (belongs to the parent that renders the comps)
+        <br />State data is data <strong>inside</strong> the comps that it controls and can mutate. 
+        (belongs to the component itself)
+        <br />child comp will receive data via props, passing state that's set in a parent stateful comp.
+        <br />Lifting state up is about cutting the state from child comp and moving it to the parent comp, 
+        with the intent of making the state available in sibling comps.
+        <br />prop drilling is passing data from parent to a child, then to a grandchild, and so on, 
+        until it reaches more distant comp further down the comp tree, where this data is required
+        <br />Lifting up state sometimes leads to prop drilling, which lowers maintainability and modularity (-ve res).
+        <br />This is no diff when it comes to choosing stateful or stateless comp
+        <br />stateful comp holds states as internal data and its state changes based on the way that the app is built; 
+        often as a result of user actions. Use stateful comps when comp needs to maintain its own state in order to work
+        <br /> A stateless comp however, doesn't store states and any changes must be inherited through props. 
+        Use stateless comps when your comp doesn't need to maintain its own state in order to work.
+        <br />A common approach for organizing comps is to have a stateful comp as parent 
+        sends its states down to several stateless comps receive the state and render it on the screen. 
+        <br />children comps are stateless and receive their parent state when passed down by using props. 
+        <br />Keep in mind that you should never change the vals of props in children comps as they are immutable
+        <br />App comp stores state can be changed through events and funcs and is therefore a stateful comp
       </div>
       <div className="return">
         return statements are the area of expressive syntax that allows you write regular HTML code 
@@ -84,6 +107,35 @@ function Notes() {
         This is just like how you use a class attr in regular HTML to style the comp in a sep CSS file.
         <br style={{display: "block", padding:"10px"}}/>or using inline style and pass it a JS obj.
         <br style={someStyles}/>props in camelCase, sep by commas, with str vals, in JS obj format.
+      </div>
+      <div className="HTMLvsJSX">
+        In HTML, you provide the event handling attr starting with on, 
+        append the name of the event <strong>All lowercased</strong>. 
+        After the "=" use "". 
+        Inside "" <mark>invoke</mark> func that will run contrary to HTML.
+        <br />
+        In React, provide the event handling attrs starting with on, 
+        append name of event <strong>First letter capitalized</strong>. 
+        After "=" use opening and closing curly braces. 
+        Inside curly brace delimiters, add <mark>name</mark> of the func to be run. 
+        <i>Make sure not to invoke it.</i>
+        <br />
+        Finally, one more feature only using React is the passing of function declarations as props.
+      </div>
+      <div className="hooks">
+        call hooks at the top level of comp or hooks. 
+        Do not call hooks inside loops or conditions. 
+        call hooks from React funcs, and not regular JS funcs. 
+        <br />there are many hooks: useState, useContext, useMemo, useRef.
+        <br />To share logic and reuse it across several comps, extract it into custom hook.
+        <br />always use array destructuring when working with "useState". 
+        name the state-setting func using the word “set” plus whatever the name of the state var is (in camelCase)
+        <br />Use "useRef" hook to access a child element directly. 
+        When invoking "useRef" hook, it will return a ref object (has a prop named "current").
+        <br />using the context API is like teleporting to your destination instantly. 
+        It's way to bypass redundant passing of data through multiple levels of comps. 
+        To set it up, add a piece of code that will be your context provider. It's also where the state will be stored. 
+        When a component needs to use the state, it becomes a context consumer.
       </div>
     </div>
   )
