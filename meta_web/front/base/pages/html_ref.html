@@ -152,13 +152,13 @@ for subscript like: H<sub>2</sub>O
   we use image tags in HTML to link to image files
   Image element is empty element (with a self closing tag)
 -->
-<img src="logo.jpg">
+<img src="../img/logo.jpg">
 <!-- src is an attribute takes relative path of the img as a str val -->
 <!-- Now the img is displayed with it's actual width and height -->
-<img src="logo.jpg" width="100">
-<img src="logo.jpg" width="100" height="200">
+<img src="../img/logo.jpg" width="100">
+<img src="../img/logo.jpg" width="100" height="200">
 <!-- controling the dimensions of the img -->
-<img src="logo.jpg" alt="My Logo">
+<img src="../img/logo.jpg" alt="My Logo">
 <!--
   It's good practice to add a short description for images.
   It helps improve accessibility and search engine rankings
@@ -231,7 +231,7 @@ for subscript like: H<sub>2</sub>O
 
 
 <!-- Forms -->
-<form action="" method="">
+<form action="" method="post">
   <label>label for field1:</label><br>
   <input type="text">
   <br>
@@ -243,7 +243,16 @@ for subscript like: H<sub>2</sub>O
 <!--
   Actions specifies the URL or path that the form should submit the request to
   When the action attribute is not specified, it submits the request to the same path as the current web page
-  with method attribute you can specify the HTTP method to use for the HTTP request when a user submits the form
+  
+  with method attribute you can specify the HTTP method to use for the HTTP request when a user submits form
+  HTTP POST method is more secure than the HTTP GET method (default val)
+    When form is submitted using the Post method, form data is inserted into the content of the HTTP req 
+    instead of appended at the end of the URL as is done with the GET method
+    the risk of using the HTTP GET method for form submission Check all that apply
+      - data will be sent insecurely
+      - data will be stored in the browser history
+      - The web address may exceed the maximum length accepted by the web server.
+
   input elem is a field where user can enter data
   type attribute takes many values:
     - (text) makes the field allow diff chars and make it visible
@@ -259,16 +268,20 @@ for subscript like: H<sub>2</sub>O
   <input type="checkbox" name="op2" value="option2">
   <label for="op2">option2</label>
   <br><br>
-  <input type="radio" name="ch1" value="choice1">
-  <label for="ch1">choice1</label>
-  <br>
-  <input type="radio" name="ch2" value="choice2">
-  <label for="ch2">choice2</label>
+  <fieldset>
+    <input type="radio" name="ch1" value="choice1">
+    <label for="ch1">choice1</label>
+    <br>
+    <input type="radio" name="ch2" value="choice2" checked>
+    <label for="ch2">choice2</label>
+  </fieldset>
 </form>
 <!--
     - (checkbox) makes it possible to check multiple choices from a set of choices
     - (radio) like checkboxes however u can chek only one choice
   use the name and value attributes to configure how the data is sent to the server
+  fieldset elem is used to group radio btns
+  adding checked attr to input elem makes the option selected by default
 -->
 <form action="">
   <input type="number" name="numericalVal">
