@@ -146,7 +146,7 @@ for subscript like: H<sub>2</sub>O
 
 
 
-<!-- images -->
+<!-- media -->
 <img /> 
 <!-- 
   we use image tags in HTML to link to image files
@@ -176,6 +176,38 @@ for subscript like: H<sub>2</sub>O
   <source src="" type="">
   <img src="" alt="">
 </picture>
+
+<video width="240" height="160" controls muted>
+  <source src="" type="video/mp4">
+  <source src="" type="video/ogg">
+</video>
+<audio controls loop>
+  <source src="" type="/audio/mpeg">
+  <source src="" type="/audio/ogg">
+</audio>
+<!--
+  video and audio tags are used for embedding media on a webpage and both tags support diff file types 
+  that can be played in the web browser
+    For videos, the following file types are supported by most web browsers, MP4, WebM, and OGG
+    For audio, the following file types are supported by most web browsers, MP3, WAV, and OGG
+  
+  "source" has no closing tag with 2 attrs
+    - "src" add the address of the video file
+    - "type" add the value "video/mp4"
+  
+  the video tag allows for multiple sources to be specified. 
+    The web browser will check through the sources and use the first one that it supports. 
+    If you prefer the web browser to use one format over another, then make sure to specify them in the preferred order
+  
+  attrs for video tag itself:
+    - "width" and "height" of the player (to provide good ux)
+    - "controls" enable player controls such as a pause and volume button
+    - "loop" after reaching end, it automatically go back and play again from start
+    - "muted" makes audio disabled by default
+
+  audio tag works as the video tag
+  MP3 file type is specified as "audio/mpeg" as MP3 is short for MPEG-1 Audio Layer 3
+-->
 
 
 
