@@ -20,3 +20,4 @@ UX ---> User Experience
 JSX --> JavaScript XML
 Repl -> read-eval-print loop 
 DRY --> Don't Repeat Yourself
+GIF --> Graphics Interchange Format
