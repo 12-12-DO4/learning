@@ -176,6 +176,16 @@ for subscript like: H<sub>2</sub>O
   <source src="" type="">
   <img src="" alt="">
 </picture>
+<!--
+  browser only supports specific file types:
+    .APNG – Animated Portable Network Graphics
+    .AVIF – AV1 Image Format
+    .GIF – Graphics Interchange Format
+    .JPEG / .JPG – Joint Photographic Expert Group image format
+    .PNG – Portable Network Graphics
+    .SVG – Scalable Vector Graphics
+    .WEBP – Web Picture Format 
+-->
 
 <video width="240" height="160" controls muted>
   <source src="" type="video/mp4">
@@ -207,6 +217,50 @@ for subscript like: H<sub>2</sub>O
 
   audio tag works as the video tag
   MP3 file type is specified as "audio/mpeg" as MP3 is short for MPEG-1 Audio Layer 3
+-->
+
+<iframe src="" sandbox allow="camera 'none'; microphone 'none';"></iframe>
+<iframe src="" sandbox="allow-downloads"></iframe>
+<!--
+  iframe allows place or embed content from another website into a webpage
+  its security has been a concern since its inception as it's vulnerable to malicious code and injection
+    a webpage can run JS code. It's imp to ensure that you trust the website you're embedding into your own
+  there are some attrs that can be applied to limit the behavior of the iframe
+    "allow"
+      limits which browser features the iframe can access
+      There are many possible vals can be set:
+        "camera 'none'; microphone 'none';" disables camera and microphone access in an iframe
+    "sandbox"
+      limits behavior within the iframe, such as preventing files from being downloaded and preventing pop-up windows
+      similar to the "allow" attr, there are many vals can be set:
+        "" when used with an empty value, all sandbox restrictions will apply to the iframe
+        individual sandbox restrictions can be removed by adding attrs
+        "allow-downloads" allow file downloads in the iframe
+  While these restrictions help keep your users secure, there may still be security vulnerabilities in your web browser 
+  that the embedded web page can exploit. Therefore, it's always best to be cautious when using iframes and 
+  ensure that you trust the website that you are embedding. (Recommend that iframes are not used)
+-->
+
+<canvas id="my_canvas"></canvas>
+<script>
+  const canvas = document.querySelector('#my_canvas');
+</script>
+<!--
+  There are many authoring tools available to produce animated and video game content for the web browser.
+  But all of these are underpinned by one of four technologies:
+    "GIF" and "webP"
+      are used to animate images, but with no interactivity
+      popular for embedding animated content and for building 2D video games and animations
+    "2D Canvas"
+      allows 2D graphics to be drawn in the web browser
+      popular for building both 2D video games and animations
+    "WebGL"
+      popular tech for building 2D and 3D animations and advanced graphics
+      a complex tech and req a lot of background info
+      uses GPU to render graphics to screen (allows complex calcs: lighting simulation and rendering massive 3D worlds)
+      it's not guaranteed that 2D canvas will use GPU. This will depend on the web browser implementation
+    logic and behavior of an animation or video game is defined using JS
+    add "id" attr to "canvas" elem to be selected in JS file
 -->
 
 
