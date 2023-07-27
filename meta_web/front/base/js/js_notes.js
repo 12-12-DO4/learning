@@ -514,3 +514,14 @@ ES6
 
   
 */
+
+// imp notes
+var items = [];
+console.log(document);
+/*
+items var above data type is arr not obj
+
+returns entire web page in the browser's memory, as a JS obj 
+not body tag of the web page in the browser's memory, as a JS obj
+nor HTML code of the downloaded webpage, as a JS str
+*/
