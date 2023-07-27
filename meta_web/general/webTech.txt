@@ -76,3 +76,11 @@ JSX
 Babel
   is a JS Compiler
   allows you to transpile JSX into plain JS code (which can be understood by a browser)
+
+GIF and webP
+  are used to animate images, but with no interactivity
+2D Canvas
+  allows 2D graphics to be drawn in the web browser (2D video games and animations)
+WebGL
+  popular tech for building 2D and 3D animations and advanced graphics but complex and req a lot of background info
+  uses GPU to render graphics to screen (allows complex calcs: lighting simulation and rendering massive 3D worlds)
