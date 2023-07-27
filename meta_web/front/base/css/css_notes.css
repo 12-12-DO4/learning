@@ -281,3 +281,121 @@ styling form by CSS
   browsers handle forms diff but with CSS makes all browsers display the form in the same way
   styling of individual elems using selectors. It will display the same across browsers with consistent ux
 */
+
+
+.layout {
+  display: inline;
+  display: block;
+  display: flex;
+  display: grid;
+
+  flex-direction: row;
+  flex-direction: column;
+  
+  justify-content: stretch;
+  justify-content: center;
+  justify-content: space-around;
+  justify-content: space-between;
+  justify-content: space-evenly;
+  justify-content: flex-start;
+  justify-content: flex-end;
+
+  align-items: stretch;
+  align-items: center;
+  align-items: flex-start;
+  align-items: flex-end;
+  
+  flex: 0 1 auto; /* flex-grow flex-shrink flex-basis */
+}
+/*
+flexbox and grid
+  They added more flexibility and D with better options for fine tuning specific sec of a web page
+  The main diff btw the two is that
+    
+    "flexbox" is 1D
+      The most common uses are creating a responsive search bar, nav bar, img gall and charts (like bar chart)
+      is short for flexible box model and it was introduced before the grid layout
+      
+      adds responsiveness to CSS with float elems and positioning 1D ref that 
+        a given flexbox container will arrange items in either col or row along its axis
+      
+      can flex to shrink or expand. Thus resulting in a flexible rwd
+
+      "flex-direction"
+      sets main axis
+      "row" (default val) 
+      "col" means changing main from horizontal rows to vertical cols
+      
+      "flex-wrap" 
+      "nowrap" (default val) means the items will span the entire width of the axis
+      "wrap" makes items wrapped to the size of the available viewport
+      
+      "flex-grow", "flex-shrink" and "flex-basis"
+      "flex-grow" specifies how much item will grow compared to other flexible items
+      "flex-shrink" specifies how much item will shrink compared to other flexible items
+      "flex-basis" specifies the initial len of flexible item (initial size of the container)
+      Together they define the rigidity or flexibility and dynamism you want to add to flexbox
+        (determine how the flex takes up space, grows or shrinks according to the space available)
+      Together can be given vals with the help of "shorthand notation" in CSS (code compact)
+        vals left empty are given their default vals
+        "flex" prop correspond to the 3 props as in above order (flex-grow flex-shrink flex-basis)
+          To demonstrate the effect of this "flex-direction" val if set to "column" is to be removed
+
+      has two axes: "main" and "cross-axis"
+        When aligned along the "row", horizontal axis is "main" and vertical axis is "cross"
+        For the items present inside the flexbox container
+          the placement starts from the top-left corner moving along the main or horizontal axis
+          When the row is filled, the items continue to the next row
+        When aligned along the "column", you flip "main" to run vertically and "cross" will be horizontal
+          items will start from top left and move down along the vertical main axis
+      
+      - props you choose will help control alignment, spacing, direc and styling container and items inside it
+    
+    "grid" is 2D (as the word implies)
+      is similar to the flexbox except it creates 2D grid along both the row and col axes
+      for creating complex page layout it's prefered to use grid sys, rel units and media queries rather than flexbox
+      The best way to ensure uniformity of rows and cols is to use "auto" and the "repeat" func together
+      Two such grid design layouts 12 and 16-col grids divide the page into 12 and 16 tracks along the vertical cols
+      
+      these are the steps in general to use grid sys:
+        - Define the grid using display property
+        - Set the height and width of the grid
+        - Set the grid-template-areas with the appropriate name identifiers
+        - Add the appropriate sizes for the rows inside the grid using grid-template-rows property
+        - Add the appropriate sizes for the columns inside the grid using grid-template-columns property
+        names used inside "grid-template-areas" are the HTML tags 
+        or where you need to get more specific, you designate a class name to these tags
+
+    alignment props
+      - "justify-content" For item alignment on main axis
+      - "align-items" For item alignment on cross axis
+      - "align-self" For unique flex items on cross axis
+      - "align-content" Used for packing flex lines and control over space
+      "justify-content" and "align-items" are freq used for the respective 2 axes
+    
+    "gap" (gutter)
+      used to create space btw items along "main"
+      You can also individually config gaps in rows and cols using "row-gap" and "column-gap" props
+*/
+
+
+/*
+CSS Units
+are used to account for the dynamism and dimensionality of a web page
+  - Absolute units
+    constant across different devices and have a fixed size
+    are used when the size of the web page is known and will remain const (useful for act like printing a page)
+    are not so suitable when it comes to the wide variety of devices have diff viewport sizes
+    "px" and "cm" are most freq used
+
+  - Relative values
+    are def in rel to
+      - viewport or the size of the visible web page
+      - other elements present inside the parent element
+    many are used in terms of the rel size of fonts. Some are more suitable depending on the rel context
+      when the Ds of the viewport are imp, it's more appropriate to use "vw" and "vh"
+      In a broader context, rel units most freq used are "%", "em", "vh", "vw" and "rem"
+
+certain props have their own set of accept vals that need to be taken into account
+  For ex, "background-color" will have vals such as #RRGGBB, rgb(), rgba(), hsl(), hsla() and so on
+*/
