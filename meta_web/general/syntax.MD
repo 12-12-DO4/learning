@@ -7,11 +7,11 @@
 |`\`|backslach|
 |`^`|circumflex sym|
 |`~`|tilde sym (bitwise nor)|
-|`$`|dolar sign|
+|`$`|dolar sign (vars)|
 |`=`|eq (assignment op)|
 |`:`|colon|
 |`;`|semicolon|
-|`#`|hash symbol (hex, comment)|
+|`#`|hash symbol (hex, comment, id)|
 |`!`|exclamation mark (not)|
 |`?`|question mark|
 |`.`|dot|
@@ -20,7 +20,7 @@
 |`%`|percent (modulus)|
 |`&`|ampersand (bitwise and)|
 |`\|`|vertical bar (pipeline, bitwise or)
-|`@`|at|
+|`@`|at (import)|
 |`-`|hyphen or dash|
 |`_`|underscore|
 |`>`|greater than|
@@ -99,3 +99,36 @@ iterable.forEach(function(iterator) {
 })
 ```
 
+
+```CSS
+/* Regular CSS */
+body { 
+  font: 100% Arial; 
+  color: lightblue; 
+} 
+```
+```SCSS
+/* SCSS */
+$font-stack: Arial; 
+$primary-color: lightblue; 
+
+body { 
+  font: 100% $font-stack; 
+  color: $primary-color; 
+}
+```
+```SASS
+/* SASS */
+$font-stack: Arial
+$primary-color: lightblue
+
+body
+  font: 100% $font-stack
+  color: $primary-color
+```
+```Stylus CSS
+/* Stylus CSS */
+body 
+  font 100% Arial 
+  color lightblue 
+```
