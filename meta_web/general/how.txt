@@ -50,3 +50,11 @@ interpreting, transpiler
 props, hooks, states
 
 CSS specificity, score calc, selectors, cascading, web-link order (LVHA)
+
+full-stack dev, data stack, caching apps, devOps, UI, workflow, app's core
+layers, tiers, N-tier app, client-server arch, hosting, client tier, presentation tier, business logic, thin clients
+3-tier arch (most common): presentation tier, app tier, data tier
+4-tier arch (when reuired): presentation tier, app tier, data tier, delivery tier, CDN providers
+security, scalability, maintenance, improvement, indep, efficiency, configration
+malicious content, Validation and sanitization (don't trust anyone)
+server capacity, scaling techs, optimization, 
