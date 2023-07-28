@@ -48,3 +48,5 @@ rendering, speed and performance, spaghetti code, memory, cache
 interpreting, transpiler
 
 props, hooks, states
+
+CSS specificity, score calc, selectors, cascading, web-link order (LVHA)
