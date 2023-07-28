@@ -84,3 +84,10 @@ GIF and webP
 WebGL
   popular tech for building 2D and 3D animations and advanced graphics but complex and req a lot of background info
   uses GPU to render graphics to screen (allows complex calcs: lighting simulation and rendering massive 3D worlds)
+
+SASS
+  scripting lang that CSS compiles and interprets into CSS.
+SCSS
+  the syntax for SASS and can be seen as an advanced v of both SASS and CSS
+Stylus
+  another CSS Preprocessors
