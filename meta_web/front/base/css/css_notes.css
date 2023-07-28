@@ -495,3 +495,106 @@ Some of these are:
   In general, ID selector should be applied in cases where you need to be certain about a rule 
   Universal selectors have zero specificity value
 */
+
+.effect {
+  color: white;
+  background-color: black;
+  transition: 1s;
+}
+
+.effect:hover {
+  transform: rotateZ(60deg);
+}
+
+.animated {
+  animation: animation-name-2 1s infinite ease;
+}
+
+@keyframes animation-name {
+  0% {transform: rotate(100deg);}
+  30% {opacity: 1;}
+  50% {opacity: 0.50;}
+  70% {opacity: 1;}
+  100% {transform: rotate(50deg);}
+}
+
+.not-animated { /* sub props and default vals */
+  animation-name: none;
+  animation-duration: 0s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+  animation-timeline: auto;
+}
+/*
+CSS effects
+  "transition"
+  ":hover"
+  "transform:"
+
+  "animation"
+  "@keyframes {}" to control the execution of the steps of the animation they use the at-keyframe rule
+
+animation is shorthand for sub props (with default vals)
+  default timing func is "ease" and that will cause an animation to be 
+    slow at the start, speed up in the middleand slow down at the end again
+  To make an animation move at a consistent speed you should change it from "ease" to "linear"
+
+to make your animations more complex and exciting, you need to have good control over the timing
+
+At-rules are statements inside CSS that describe how to behave or perform certain actions
+*/
+
+/*
+CSS Preprocessors
+
+  special compilers used to create CSS file that can be ref by HTML doc (extension of CSS)
+    reduce the amount of CSS you need to write and allow you to re-use vals across multiple rules
+    make re-using animations and effects much easier (not just in animation but any CSS code)
+
+  Some feats of preprocessors have option to create vars, loops, and "if else" states
+  
+  Diff preprocessors have their own syntax and configs for adding feats
+  
+  use of preprocessors req i of a compiler on top of your web server
+  
+  In the early days of CSS, the main problem devs faced was the difficulty of managing the code.
+  The way CSS was designed made the code very long, messy and complex. It also made it difficult to troubleshoot
+  Preprocessors have their own scripting lang that adds logical structs, auto props, reusability and bloating of code
+  
+  most commonly used preprocessors: SASS, LESS, Stylus and PostCSS
+    - SASS and SCSS
+    SASS is a scripting lang that CSS compiles and interprets into CSS.
+    SCSS is the syntax for SASS and can be seen as an advanced v of both SASS and CSS
+    There are 2 syntaxes available for SASS
+      
+      - first known as SCSS (Sassy CSS)
+        is an ext of the syntax of CSS means that every valid CSS stylesheet is a valid SCSS file with the same meaning
+        This syntax is enhanced with the SASS feats. Files using this syntax have the ".scss" extension
+      
+      - second kown as the indented syntax (or just "SASS")
+        is the older syntax provides a more concise way of writing CSS.
+        Files using this syntax have the .sass extension
+        uses
+          indentation rather than brackets to indicate nesting of selectors
+          newlines rather than ";" to separate props
+      
+    allow usage of math and other funcs that can be utilized for adding rules conditionally
+
+    Another important funct in SASS is the use of directives
+      - "@mixin", "@include"
+        add properties that you want to reuse inside "@mixin"
+        use "@include" and add the mixin identifier that you have created using the "@mixin" directive
+      - "@import" and "@extend"
+        "@import" allows the import of rules from another file,
+        "@extend" allows all the rules from a specific selector to be added inside another selector
+
+    - Stylus CSS
+    It is not hard to miss the simplicity of the code without the colons, brackets or semicolons.
+    But it is still allowed to use all of them in Stylus without any error
+    allow the use of funcs useful when adding color gradation or creating advanced geo shapes on web page
+    
+*/
