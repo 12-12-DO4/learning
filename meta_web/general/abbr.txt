@@ -21,3 +21,4 @@ JSX --> JavaScript XML
 Repl -> read-eval-print loop 
 DRY --> Don't Repeat Yourself
 GIF --> Graphics Interchange Format
+LVHA -> Link, Visited, Hover, Active (web-link states order)
