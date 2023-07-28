@@ -4,16 +4,79 @@ selector {
   property-two : value;
 }
 selector may be:
-  - element
-  - .class-name
-  - #idName
-  - [attribute=value]
-  - parent child (Descendant Selectors)
-  - parent > child
-  - selector + sibling
-  - selector:pseudo-class
-  - selector::pseudo-element
-  - mixture of all
+  - type selector
+    HTML tag name (element)
+
+  - class selector
+    val of "class" attr for elem (.class-name)
+
+  - id selector
+    val of "id" attr for elem (#idName)
+    ID is unique. It's prefered to use with JS
+  
+  - attribute selector
+    has several syntax variations
+      [attr], [attr=val], [attr~=val], [attr|=val], [attr^=val], [attr$=val], [attr*=val]
+
+  - universal selectors *
+
+  - combinational selectors
+    - descendant selectors (parent child)
+      useful if you need to select HTML elems contained within another selector
+      The easiest way to remember is to think of a family
+        pick a person in the family and select all descendants, such as children, grandchildren and great grandchildren
+
+    - child selectors (parent > child)
+      are more specific than descendant selectors
+      in family ex, select a person and then select only their immediate children
+
+      
+    - general sibling selectors (selector ~ sibling)
+      apply rules to all the selectors of the same type that follow the first type
+      for family ex, select a person and then select all younger brothers
+
+    - adjacent sibling selectors (selector + sibling)
+      to target only the first or adj elem that follows another elem
+      (only selects the first subseq elem if it matches the selector)
+      for family ex, select a person and then selects the next younger brother
+      
+    Adj combinators will only target the first elem after the specified elems
+    Sibling combinators target all elems of the same type that follow the specified elem
+
+  - pseudo class selectors (selector:pseudo-class)
+    improve the interactivity of web pages by styling elements in response to user input
+    allow selecting elems based on their state
+    
+    user action states
+      have an effect while a user is actively engaging with a HTML elem
+      - "focus" focuses styling on the elem that you use it for
+      - "visited" changes the style of link when a user visited it
+      - "hover" changes the style of elem when a cursor hovers over it
+      - "active" styles an elem only while a user actively presses and holds mouse btn
+      LVHA: link visited hover active (to remind web-link states in order)
+    
+    form states
+      usually come in pairs and target the diff states that elems can have
+      "disabled" and "enabled" generally used for btns
+      "checked" and "indeterminate" used for checkboxes
+      "valid" and "invalid" used in case of fields like emails and phone nums
+    
+    specific position-based states
+      allow you to target specific items
+      ":first-of-type" style the first item of its type while remaining items won't be affected
+      ":last-of-type" style the last item of its type while remaining items won't be affected
+      ":nth-of-type()", ":nth-last-of-type()", ...
+
+  - pseudo elements (selector::pseudo-element)
+    help you style a specific part of an element
+    "::first-letter" change style of just the first letter
+    "::first-line" change style of the complete first line
+    "::selection" its effect becomes obvious only after the user selects content
+    "::marker" add style elements to a list, for instance, to color bullet points (enhancing ux)
+    "::before" and "::after" allow adding content before and after an elem (without HTML code)
+
+  - group selectors (selector1, selector2)
+    sometimes called selector stacking
 
 part inside {} is called decleration block
 pseudo-class is very useful for creating visual effects based on user interaction
@@ -376,6 +439,9 @@ flexbox and grid
     "gap" (gutter)
       used to create space btw items along "main"
       You can also individually config gaps in rows and cols using "row-gap" and "column-gap" props
+
+    flexboxes are more suitable when you want to create flexible elements in smaller spaces
+    grids are more suitable to large-scale layouts
 */
 
 
@@ -398,4 +464,34 @@ are used to account for the dynamism and dimensionality of a web page
 
 certain props have their own set of accept vals that need to be taken into account
   For ex, "background-color" will have vals such as #RRGGBB, rgb(), rgba(), hsl(), hsla() and so on
+*/
+
+/*
+Specificity is ranking or score helps CSS determine the final rule will be applied to a given elem
+CSS engines use specificity to resolve conflicts (elem with the highest specificity is selected by CSS)
+
+CSS has a set of rules that it uses to score or assign a certain weight to selecs and creates a specificity hierarchy.
+these rules only apply in cases where conflicts arise for the props
+Based on the weights, there are 4 cats in this hierarchy:
+  - Inline styles
+    are attached to the elems within your HTML code like with "style" attr
+    have the highest specificity (will be applied irrespective of other rules)
+
+  - IDs
+  
+  - Classes, attributes, and pseudo-classes
+  
+  - Elements and pseudo-elements
+    have the lowest pos in the specificity hierarchy
+
+CSS uses the hierarchical model internally to calculate the specificity of the selectors used on a web page
+as the size of CSS code increases, devs unavoidably face rule conflicts
+so they use specificity hierarchy to calc the precedence of CSS rules and control the outcome of their web pages
+While the weights assigned from hierarchical struct help in a systematic approach, 
+there are a few more imp guidelines and rules in cases when score for diff selecs is the same
+Some of these are:
+  Every selector will have a score and place in the hierarchy
+  In the case of selectors with equal specificity, the latest or last written rule is the one that will be applied
+  In general, ID selector should be applied in cases where you need to be certain about a rule 
+  Universal selectors have zero specificity value
 */
