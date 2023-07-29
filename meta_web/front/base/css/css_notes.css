@@ -596,5 +596,21 @@ CSS Preprocessors
     It is not hard to miss the simplicity of the code without the colons, brackets or semicolons.
     But it is still allowed to use all of them in Stylus without any error
     allow the use of funcs useful when adding color gradation or creating advanced geo shapes on web page
-    
 */
+
+/*
+CSS errs and linters
+  CSS does not handle errs. It passes through code and ignores lines doesn't understand
+  VSCode will indicate general errs
+  linter can help you find any problematic patterns or inefficiencies in code (run tests on CSS code)
+*/
+
+/*
+CSS Debugging
+  CSS compiler reads the elements from right to left
+  styling you have renders correctly in the IDE but misbehaves in a browser
+    as they have their own default CSS stylesheets called "user-agent" styles
+    Overriding the browser's settings can be done with universal selector
+      props such as "margin: 0px;" to reset the margin vals set by browser by default
+*/
+
