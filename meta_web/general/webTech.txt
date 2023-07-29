@@ -91,3 +91,9 @@ SCSS
   the syntax for SASS and can be seen as an advanced v of both SASS and CSS
 Stylus
   another CSS Preprocessors
+
+Stylelint
+  CSS linter and formatter
+
+modernizer, reset.css, and normalized.css
+  CSS libs to help ensure that CSS rules are consistent across browsers
