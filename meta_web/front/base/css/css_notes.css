@@ -614,3 +614,26 @@ CSS Debugging
       props such as "margin: 0px;" to reset the margin vals set by browser by default
 */
 
+/*
+Color schemes
+  all colors are a combination of the three colors: red, yellow, and blue (primary colors)
+  orange, purple and green are a combination of two primary colors (secondary colors)
+  there are six tertiary colors formed from a combination of 3 primaries with secondary colors
+  adding more black or more whiteyou can create lighter or darker tints of each color
+  all of these colors and tints make up a color wheel of 12 colors (foundation for any color scheme)
+  Dep on the rel pos of colors on wheel, there are 7 identified color schemes according to color theory
+    can be used for maximum appeal:
+    Monochromatic, Analogous, Complementary, Split complimentary, Triadic, Square and Rectangle  
+    u can read further in article linked below
+    https://www.moving.com/tips/how-to-choose-a-color-scheme-for-your-home/
+    practiced UX designer will consider whether specific type of color scheme is more suitable for certain websites
+      depends on several other factors such as 
+        num of colors need for your webpaget
+        topic and domain of the webpage
+        user demographics of the readers ...
+        info website for medical services will typically have a white bg
+      complementary colors are well-suited for websites that will have bars and charts
+
+Other than the color schemes mentioned, even achromatic themes with only black and white color 
+can be appealing if styling and design is well presented.
+*/
