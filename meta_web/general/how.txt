@@ -60,3 +60,5 @@ malicious content, Validation and sanitization (don't trust anyone)
 server capacity, scaling techs, optimization, 
 
 CSS Preprocessors
+
+Errors, Debugging, linters, DevTools, 
