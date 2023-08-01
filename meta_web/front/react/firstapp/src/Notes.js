@@ -157,6 +157,9 @@ function Notes() {
         </div>
       }
       {/* cond ? <p>cond works successfully</p> : setCond(true) */}
+      <div className="router">
+        Instead of anchor tags and href attr, use the Link tag and to attr with React Router. 
+      </div>
     </div>
   )
 };
