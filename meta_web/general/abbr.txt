@@ -26,3 +26,4 @@ SASS -> Syntactically Awesome Style Sheets
 SCSS -> Sassy CSS
 Nav --> Navigation
 SPA --> Single Page App
+SSR --> Server-Side rendering
