@@ -62,3 +62,5 @@ server capacity, scaling techs, optimization,
 CSS Preprocessors
 
 Errors, Debugging, linters, DevTools, 
+
+SPA, bundling, lazy loading, routing, 
