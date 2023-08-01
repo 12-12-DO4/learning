@@ -160,6 +160,22 @@ function Notes() {
       <div className="router">
         Instead of anchor tags and href attr, use the Link tag and to attr with React Router. 
       </div>
+      <div className="assets">
+        Assets are all the files that your React app needs to have access to in order to work as intended. 
+        They can be things like images, style sheets, fonts, media files, or basically any file needed at runtime. 
+        <br />The general rule for asset storage is that if your app can compile without it, keep it in "public" folder
+      </div>
+      <div className="webpack">
+        Webpack is a module bundler helps developers create modern web apps using two modes: 
+        <br />development mode: 
+        <br />webpack bundles files and optimizes bundles for updates, 
+        so that any updates in your locally developed app are quickly re-bundled. 
+        It also builds src maps to inspect the original file included in bundled code.
+        <br />production mode: 
+        <br />webpack bundles files so that they are optimized for speed. 
+        The files are minified and organized to take up the least amount of memory. 
+        So, they are optimized for speed as bundles are fast to download when a user visits the website online.
+      </div>
     </div>
   )
 };
