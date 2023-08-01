@@ -97,3 +97,7 @@ Stylelint
 
 modernizer, reset.css, and normalized.css
   CSS libs to help ensure that CSS rules are consistent across browsers
+
+React Router
+  lib gives you more control over the routing of comps because React can't imitate multi-page websites
+
