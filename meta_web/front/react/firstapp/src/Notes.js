@@ -4,7 +4,10 @@ as React treats lowercase components as regular HTML elems
 Capitalizing component name helps React to distinguish JSX elems from HTML elems
 */
 
+import { useState } from "react";
+
 function Notes() {
+  const [cond, setCond] = useState(true);
   const someStyles = {
     color: "#eee",
     fontWeight: "bold",
@@ -137,6 +140,25 @@ function Notes() {
         To set it up, add a piece of code that will be your context provider. It's also where the state will be stored. 
         When a component needs to use the state, it becomes a context consumer.
       </div>
+      <div className="spa">
+        Social network, online email provider, map apps, their excellent ux are driven by SPAs. 
+        <br />The entire app is loaded inside a single div, not in diff pages. 
+        Diff views rendered when React makes changes to the Virtual DOM, with React updating the real DOM accordingly. 
+        diff pages are broken into templates (views). Each view will have HTML code containing vars updated by app. 
+        Browser sends req to server, and server sends back a JSON obj. 
+        Browser then updates web page by inserting temp with vars replaced by the vals in JSON obj.
+      </div>
+      {
+        cond && 
+        <div className="cond-render">
+          AND "&&" op is used to achieve cond rendering. surrounded by some code both on its left and on its right sides; 
+          on left, val is provided, on right, a piece of JSX is provided. If a prop gets evaluated to true, using the &&, 
+          you can render whatever JSX elems you want to right of "&&". 
+        </div>
+      }
+      {/* cond ? <p>cond works successfully</p> : setCond(true) */}
     </div>
   )
 };
+
+export default Notes;

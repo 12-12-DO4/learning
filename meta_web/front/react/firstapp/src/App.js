@@ -1,10 +1,18 @@
-import './App.css';
+import Header from './Header'
+import Home from './Home';
+import Notes from './Notes';
+import { Routes, Route } from "react-router-dom"
 
-function Heading() {
-  return <h1>Hello World!</h1>
-}
 function App() {
-  return <Heading />
+  return (
+    <div>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />}/>
+        <Route path="/notes" element={<Notes />}/>
+      </Routes>
+    </div>
+  );
 }
 
 export default App;
