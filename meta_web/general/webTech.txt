@@ -101,3 +101,16 @@ modernizer, reset.css, and normalized.css
 React Router
   lib gives you more control over the routing of comps because React can't imitate multi-page websites
 
+Webpack
+  module bundler take various kinds of files, such as SVG and image files, CSS and SCSS files, JS files, and TS files, 
+  and it will bundle them together so that a browser can understand that bundle and work with it.
+  builds a dependency graph and bundles modules into one or more files that a browser can consume. 
+  converts modern JS code (understood by modern browsers) into older v of JS so older can understand (transpiling).
+    transpile ES7 code to ES5 code
+  optimizes code to load as quickly as possible when user visits web pages
+  process SCSS code into the regular CSS, which browsers can understand
+  build src maps of the bundle's building blocks. 
+  produce various kinds of files based on rules and templates (includes HTML files)
+  helps developers create modern web apps using two modes: production mode or dev mode
+
+
