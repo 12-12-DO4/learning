@@ -63,4 +63,4 @@ CSS Preprocessors
 
 Errors, Debugging, linters, DevTools, 
 
-SPA, bundling, lazy loading, routing, 
+SPA, bundling, dep graph, lazy loading, routing, SSR, client-side rendering, isomorphic apps, assets
