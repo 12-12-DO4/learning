@@ -24,3 +24,5 @@ GIF --> Graphics Interchange Format
 LVHA -> Link, Visited, Hover, Active (web-link states order)
 SASS -> Syntactically Awesome Style Sheets
 SCSS -> Sassy CSS
+Nav --> Navigation
+SPA --> Single Page App
