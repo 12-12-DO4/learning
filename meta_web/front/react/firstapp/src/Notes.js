@@ -157,6 +157,7 @@ function Notes() {
         </div>
       }
       {/* cond ? <p>cond works successfully</p> : setCond(true) */}
+      {/* cond && <p>cond works successfully</p> */}
       <div className="router">
         Instead of anchor tags and href attr, use the Link tag and to attr with React Router. 
       </div>
@@ -175,6 +176,17 @@ function Notes() {
         <br />webpack bundles files so that they are optimized for speed. 
         The files are minified and organized to take up the least amount of memory. 
         So, they are optimized for speed as bundles are fast to download when a user visits the website online.
+      </div>
+      <div className="keys">
+        Keys are identifiers help React to determine which items have changed or added or removed. 
+        They instruct how to treat elem when update occurs and whether its internal state should be preserved or not. 
+        The general rule of thumb with keys is to use a stable identifier that is unique among its siblings. 
+        This allows React to reuse as many elements from the list as possible, avoiding unnecessary recreations, 
+        especially when their content is exactly the same and the only thing that has changed is their position in list.
+        <br />The key used most often is a unique ID that comes from your data. Those IDs typically mirror a db ID.
+        <br />Indexes are not recommended for keys if the order of items may change
+        <br />When used incorrectly, keys can negatively impact performance and 
+        may cause unexpected glitches in UI when updating list.
       </div>
     </div>
   )
