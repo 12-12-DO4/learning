@@ -67,7 +67,7 @@ SPA, bundling, dep graph, lazy loading, routing, SSR, client-side rendering, iso
 
 pure funcs, first order funcs, higher order funcs, chaining
 
-stiffening algorithm
-
-hooks in React (useState - useRef - useEffect - useContext)
-components in React(nav - Link, li - key, form - value - onChange - onSubmit - controlled comp)
+React Diffing Algorithm
+hooks in React (useState - useRef - useEffect - useContext - useMemo)
+components in React(nav - Link - map, li - key, form - value - onChange - onSubmit - controlled comp)
+Context API, Top Level API (react.memo()), Memoization, 
