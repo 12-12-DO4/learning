@@ -63,7 +63,7 @@ function Notes() {
           </li>
         </ul>
       </div>
-      <div className="props_vs_states" >
+      <div className="props-vs-states" >
         like params in JS func allow you pass in vals as args, React uses props to pass data btw comps
         <br /> Props are like a JS obj passed using JSX syntax
         <br />When two comps communicate with each other, this communication is one-way street (unidirectional). 
@@ -92,6 +92,7 @@ function Notes() {
         <br />children comps are stateless and receive their parent state when passed down by using props. 
         <br />Keep in mind that you should never change the vals of props in children comps as they are immutable
         <br />App comp stores state can be changed through events and funcs and is therefore a stateful comp
+        <br />both state and props are JS obj
       </div>
       <div className="return">
         return statements are the area of expressive syntax that allows you write regular HTML code 
@@ -187,6 +188,20 @@ function Notes() {
         <br />Indexes are not recommended for keys if the order of items may change
         <br />When used incorrectly, keys can negatively impact performance and 
         may cause unexpected glitches in UI when updating list.
+      </div>
+      <div className="memo-context">
+        Memoization is a programming tech accelerates performance by caching the return vals of expensive func calls. 
+        If your comp renders the same res given the same props, wrap it in a call to React.memo for a performance boost. 
+        React will skip rendering the comp, and reuse the last rendered result.
+        <br />React.memo takes the comp definition as a first arg. An optional second arg can be included if you would 
+        like to specify some custom logic that defines when the comp should re-render based on prev and current props.
+        <br />choosing context instead of local state for: 
+        <br />The visibility state of an alert that overlays into the whole application. 
+        (global alerts are well suited for context since any component can trigger them)
+        <br />The locale or language that should be used in the application’s text. 
+        (since that’s global state that affects all component’s text)
+        <br />local state is better suited than context for The current selection of a group of radio buttons 
+        (since no other comps needed to know about it)
       </div>
     </div>
   )
