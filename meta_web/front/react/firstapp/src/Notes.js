@@ -203,6 +203,18 @@ function Notes() {
         <br />local state is better suited than context for The current selection of a group of radio buttons 
         (since no other comps needed to know about it)
       </div>
+      <div className="useEffect">
+        "useEffect" is built-in React hook best suited to perform side effects in your React comps. 
+        <br />code placed inside "useEffect" hook always runs after comp mounts (after React updates DOM). 
+        depending on your config via the deps arr, effects can also run when certain state vars or props change. 
+        By default, if no second arg is provided to "useEffect" func, the effect will run after every render. 
+        However, that may cause performance issues, especially if your side effects are computationally intensive. 
+        <br /> A way to instruct React to skip applying an effect is passing an arr as a second param. 
+        the effect will only be re-run if arr vals changes between renders. 
+        React will compare arr from the previous render and arr from the next render. 
+        Since all items inside arrs are the same, React would skip running the effect. 
+        <br />If your effect returns func, React will run it when it's time to clean up resources and free unused memory.
+      </div>
     </div>
   )
 };
