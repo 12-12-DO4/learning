@@ -73,3 +73,7 @@ components in React(nav - Link - map, li - key, form - value - onChange - onSubm
 Context API, Top Level API (react.memo()), Memoization, 
 
 single threaded execution, third party, side effects, async JS, APIs, fetch().then(), promises
+
+JSX, children, rendering, top-level APIs, React.cloneElement(), React.Children.map()
+comp composition in react: containment, specialization
+
