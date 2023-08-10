@@ -270,6 +270,39 @@ function Notes() {
         "Specialization" def comps as being special cases of other comps. 
         For example, the ConfirmationDialog is a special case of Dialog. 
       </div>
+      <div className="hoc">
+        HOC is an advanced pattern that emerges from React's compositional nature to abstract shared behavior. 
+        <br />You can def logic in a single place, share it across many comps, and keep them unchanged and stateless. 
+        A HOC trans comp into another comp (enhances or extends the capabilities of comp provided). 
+        <br /> best practices and caveats regarding HOCs: 
+        <br />never mutating comp inside HOC
+        <br />JS allows modify comp provided as arg (mutate it), and in some cases, it seems the most straightforward 
+        and quickest path. But remember that React promotes immutability in all scenarios. So instead, 
+        use composition and turn the HOC into pure func doesn't alter received arg, always returning new comp.
+        <br />passing unrelated props to wrapped comp
+        <br />HOC adds feats to comp (enhances it). That's why they shouldn't drastically alter their original contract. 
+        Instead, the compon returned from a HOC is expected to have a similar interface to the wrapped comp. 
+        HOCs should spread and pass through all the props that are unrelated to their specific concern, 
+        helping ensure that HOCs are as flexible and reusable as possible
+        <br />maximizing composability by leveraging the Component =&gt; Component signature
+        <br />HOC is a func that accepts a React comp and returns new comp. HOCs can accept additional args 
+        that act as extra config determining the type of enhancement the comp receives. 
+        The most common signature for HOCs uses FP pattern called "currying" to maximize func composition. 
+        <br />"connect()" is func returns HOC, presenting a valuable prop for composing several HOCs together. 
+        Single-argument HOCs like one returned by the "connect" func has the signature Component =&gt; Component. 
+        It turns out that funcs whose output type is the same as its input type are really easy to compose together. 
+        <br />compose(f, g, h) is the same as (...args) =&gth; f(g(h(...args)))
+        <br />hocs come with a few caveats that aren't immediately obvious: 
+        <br />Don't use HOCs inside other comps
+        <br />always create your enhanced comps outside any component scope. Otherwise, 
+        if you do so inside the body of other comps and a re-render occurs, the enhanced comp will be diff. 
+        That forces React to remount it instead of updating. (comp and its children would lose their prev state)
+        <br />Refs aren't passed through
+        <br />since React refs are handled specially by React (not props). If you add ref to elem whose 
+        comp is result of HOC, the ref refers to instance of the outermost container comp, not the wrapped comp
+        <br />The "with" part of the HOC name is general convention recommended by React, 
+        as it expresses the enhancing nature of the technique, like providing a component 'with' something else. 
+      </div>
     </React.Fragment>
   )
 };
