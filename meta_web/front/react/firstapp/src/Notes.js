@@ -4,17 +4,17 @@ as React treats lowercase components as regular HTML elems
 Capitalizing component name helps React to distinguish JSX elems from HTML elems
 */
 
-import { useState } from "react";
+import React from "react";
 
 function Notes() {
-  const [cond, setCond] = useState(true);
+  const [cond, setCond] = React.useState(true);
   const someStyles = {
     color: "#eee",
     fontWeight: "bold",
     marginRight: "10px"
   }
   return(
-    <div className="notes">
+    <React.Fragment> {/* <></> */}
       <div>React comp is much like a regular JS func</div>
       <div>For a comp to render something on the page, it needs to return one or more JSX elems</div>
       <div>browser cannot understand JSX syntax</div>
@@ -125,6 +125,18 @@ function Notes() {
         <i>Make sure not to invoke it.</i>
         <br />
         Finally, one more feature only using React is the passing of function declarations as props.
+        <br />false, null, undefined, and true are all valid children. They simply don't render anything. 
+        The below exp will all render the same thing: (watch in src page)
+        <div />
+        <div></div>
+        <div>{false}</div>
+        <div>{null}</div>
+        <div>{undefined}</div>
+        <div>{true}</div>
+        Top-level API ref to the way you would import those funcs from the react pkg. 
+        You can either import react as a global obj and the top of your file and access them as methods on that obj. 
+        Or alternatively as a named import. Recall that elems are just plain JS objs. 
+        The react uses internally to describe what you want to appear on the screen. 
       </div>
       <div className="hooks">
         call hooks at the top level of comp or hooks. 
@@ -167,6 +179,10 @@ function Notes() {
           AND "&&" op is used to achieve cond rendering. surrounded by some code both on its left and on its right sides; 
           on left, val is provided, on right, a piece of JSX is provided. If a prop gets evaluated to true, using the &&, 
           you can render whatever JSX elems you want to right of "&&". 
+          <br />However, keep in mind that React still renders some "false" values, like the 0 number. 
+          For example, because 0 will be printed when props.arr is an empty array as ex (props.arr.length && render ...). 
+          To fix this, you need to make sure the expression before && (props.arr.lendth &gt; 0 && render ...) or 
+          (!!props.arr.length && render ...)
         </div>
       }
       {/* cond ? <p>cond works successfully</p> : setCond(true) */}
@@ -247,7 +263,14 @@ function Notes() {
       <div className="useRef">
         The returned val from "useRef" hook invocation is an obj. 
       </div>
-    </div>
+      <div className="composition">
+        2 main feats enable comp composition; containment and specialization. 
+        "Containment" ref to: some comps don't know their children ahead of time. 
+        And can also be described as generic boxes, like a Dialog or Alert. 
+        "Specialization" def comps as being special cases of other comps. 
+        For example, the ConfirmationDialog is a special case of Dialog. 
+      </div>
+    </React.Fragment>
   )
 };
 
