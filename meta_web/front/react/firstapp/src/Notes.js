@@ -140,6 +140,18 @@ function Notes() {
         It's way to bypass redundant passing of data through multiple levels of comps. 
         To set it up, add a piece of code that will be your context provider. It's also where the state will be stored. 
         When a component needs to use the state, it becomes a context consumer.
+        <br />the four main rules of hooks: 
+        <br />You should only call hooks from React component func.
+        <br />You should only call hooks at the top level of React comp func.
+        <br />You are allowed to call multiple state hooks or effect hooks inside comp.
+        <br />always make these multiple hook calls in the same sequence
+        <br />Don't call hooks inside (loops - if statements - nested functions). 
+        <br />custom hook is simply a way to extract a piece of func that you can use again and again. 
+        use custom hook when you want to avoid duplication or building piece of func from scratch across multiple projs. 
+        <br />custom hook will need to 
+        <br />use the "useEffect" hook. 
+        <br />be a sep file to use in the App comp. 
+        <br />have a name that begins with "use". 
       </div>
       <div className="spa">
         Social network, online email provider, map apps, their excellent ux are driven by SPAs. 
@@ -214,6 +226,26 @@ function Notes() {
         React will compare arr from the previous render and arr from the next render. 
         Since all items inside arrs are the same, React would skip running the effect. 
         <br />If your effect returns func, React will run it when it's time to clean up resources and free unused memory.
+        <br />if "useEffect" used inside If, that makes the use of the hook in this code invalid. 
+        <br />resp from fetching third-party data might fail, or be delayed. It's useful to provide different renders, 
+        based on whether or not the data has been received. The simplest condit rendering might involve 
+        setting up two renders, based on whether or not the data has been successfully fetched. 
+      </div>
+      <div className="useReducer">
+        "useReducer" hook gets an initial state and a reducer func. (control state of large state-holding objs)
+        <br />"useState" hook is best used on less complex data. While it's possible to use any kind of a data struct 
+        when working with "useState", it's better to use it with primitive data types, such as strs, nums, or bools. 
+        "useReducer" hook is best used on more complex data, specifically, arrs or objs. 
+        "useState" hook starts with an initial state, but "useReducer" hook gets a reducer func in addition.
+        <br />for simple obj working with "useState" can sometimes feel easier than thinking 
+        about how the state is controlled when working with "useReducer".
+        <br />use "useState" hook with primitive data types and simple use cases, such as toggling a var on or off.
+        <br />One -ve charac of "useState" is that it often gets hard to maintain as the state gets more complex. 
+        On the flip side, a -ve charac of "useReducer" it requires more prep work to begin with (more setup involved). 
+        However, once this setup is completed, it gets easier to extend the code based on new reqs.
+      </div>
+      <div className="useRef">
+        The returned val from "useRef" hook invocation is an obj. 
       </div>
     </div>
   )
