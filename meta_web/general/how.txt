@@ -74,6 +74,7 @@ Context API, Top Level API (react.memo()), Memoization,
 
 single threaded execution, third party, side effects, async JS, APIs, fetch().then(), promises
 
-JSX, children, rendering, top-level APIs, React.cloneElement(), React.Children.map()
-comp composition in react: containment, specialization
+JSX, children, rendering, top-level APIs, React.cloneElement(), React.Children.map(), React.forwardRef API
+comp composition in react: containment, specialization, cross-cutting concerns, single-argument hocs, with, render, 
+HOC(enhance, compose, connect, HOC, wrappedComponent, EnhancedComponent)
 
