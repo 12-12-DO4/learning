@@ -113,4 +113,8 @@ Webpack
   produce various kinds of files based on rules and templates (includes HTML files)
   helps developers create modern web apps using two modes: production mode or dev mode
 
+React Redux
+  popular lib for managing state in React apps
 
+lodash, Redux and Ramda
+  third-party libs provide an implementation of the compose utility func
