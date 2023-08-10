@@ -490,6 +490,20 @@ TDD
       tests become a specific kind of documentation for the new members of your team
 */
 
+
+/*
+Fetch is used to make a server reqs to retrieve some JSON data from it.
+Fetch API is a set of funcs that we have at our disposal to use in JS to make server req. 
+It's a bit like a clerk at the post office. Say you're bringing a pkg to the post office and you're 1st in the queue. 
+The clerk on the other side of the service desk is JS. Since they can only do one thing at a time. 
+  They go through the process of getting your details, measuring the weight of the pkg, pasting stamps onto the pkg, 
+  charging you for the service and go into the back-office and carrying the pkg there, 
+  then taking time to find the correct place for the pkg before it gets shipped.
+  The problem with this approach is that the next step cannot start before the prev one is finished. (single-threaded)
+The fetch func utilizes external APIs to perform tasks that would be cumbersome for JS to fulfil alone (async JS)
+*/
+
+
 const var1 = (param1, param2) => {
   state1;
   state2;
@@ -524,4 +538,6 @@ items var above data type is arr not obj
 returns entire web page in the browser's memory, as a JS obj 
 not body tag of the web page in the browser's memory, as a JS obj
 nor HTML code of the downloaded webpage, as a JS str
+
+when destruct objs, you have to destruct a prop of an obj using that exact prop's name as the name of the destruct var
 */
