@@ -303,6 +303,13 @@ function Notes() {
         <br />The "with" part of the HOC name is general convention recommended by React, 
         as it expresses the enhancing nature of the technique, like providing a component 'with' something else. 
       </div>
+      <div className="jest-vs-React-testing">
+        Jest is a JS test runner that lets you access an artificial DOM called jsdom. 
+        While jsdom is only an approximation of how the browser works, it is often good enough for testing React comps.
+        <br />React Testing Lib is set of utils let you test React comps without relying on their implementation details. 
+        React Testing Library is designed to fulfill all testing best practices out of the box, 
+        so that you are able to focus on the business logic your tests need to run assertions on.
+      </div>
     </React.Fragment>
   )
 };
