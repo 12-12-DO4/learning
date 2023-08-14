@@ -78,3 +78,5 @@ JSX, children, rendering, top-level APIs, React.cloneElement(), React.Children.m
 comp composition in react: containment, specialization, cross-cutting concerns, single-argument hocs, with, render, 
 HOC(enhance, compose, connect, HOC, wrappedComponent, EnhancedComponent)
 
+react-testing-lib vs jest, mock func
+continous integration
