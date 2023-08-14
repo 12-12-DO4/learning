@@ -181,7 +181,7 @@ function Notes() {
           you can render whatever JSX elems you want to right of "&&". 
           <br />However, keep in mind that React still renders some "false" values, like the 0 number. 
           For example, because 0 will be printed when props.arr is an empty array as ex (props.arr.length && render ...). 
-          To fix this, you need to make sure the expression before && (props.arr.lendth &gt; 0 && render ...) or 
+          To fix this, you need to make sure the expression before && (props.arr.length &gt; 0 && render ...) or 
           (!!props.arr.length && render ...)
         </div>
       }
@@ -309,6 +309,16 @@ function Notes() {
         <br />React Testing Lib is set of utils let you test React comps without relying on their implementation details. 
         React Testing Library is designed to fulfill all testing best practices out of the box, 
         so that you are able to focus on the business logic your tests need to run assertions on.
+        <br />"Screen.getByLabelText" asks the root doc to find a label tag whose text contains specified text val 
+        and then return the input elem associated with that label
+        <br />To fill the input and update the state with a val, use "fireEvent.change()" util from React Testing Lib.
+      </div>
+      <div className="CI">
+        Cont Int is SW dev technique in which devs use v control sys, and push code changes daily, multiple times a day. 
+        Instead of building out feats in iso and int them at the end of dev cycle, more iterative approach is employed. 
+        Each merge trig auto set of scripts to auto build and test app that help decrease chances you introduce err. 
+        If some of scripts fail, CI sys doesn't progress to further stages, issuing report that devs use to 
+        promptly assess what was wrong and resolve the problem.
       </div>
     </React.Fragment>
   )
