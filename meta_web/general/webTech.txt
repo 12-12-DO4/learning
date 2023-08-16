@@ -118,3 +118,11 @@ React Redux
 
 lodash, Redux and Ramda
   third-party libs provide an implementation of the compose utility func
+
+ChakraUI
+  well-designed UI library that can speed up your app delivery
+Formik
+  tool can simplify your form design
+Yup
+  chain operators that hep you write declarative validation rules
+
